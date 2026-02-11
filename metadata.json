@@ -1,0 +1,8 @@
+{
+  "name": "ACHILLE Ai",
+  "description": "A powerful, mobile-first AI assistant featuring Thinking Mode, Image Analysis, Text-to-Speech, and ultra-fast responses.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
