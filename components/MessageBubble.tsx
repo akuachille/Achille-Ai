@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Message, Sender } from '../types';
 import { generateSpeech, playAudioBuffer } from '../services/geminiService';
-import { Loader2, Play, Volume2 } from 'lucide-react';
+import { Loader2, Play, Volume2, ExternalLink } from 'lucide-react';
 
 interface MessageBubbleProps {
   message: Message;
@@ -51,6 +51,27 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
         <div className="whitespace-pre-wrap text-sm leading-relaxed">
            {message.text}
         </div>
+
+        {/* Search Sources */}
+        {message.sources && message.sources.length > 0 && (
+          <div className="mt-3 pt-3 border-t border-slate-700/50">
+            <p className="text-[10px] uppercase font-bold text-slate-500 mb-2 tracking-wider italic">Sources found on Google Search:</p>
+            <div className="flex flex-wrap gap-2">
+              {message.sources.map((source, i) => (
+                <a
+                  key={i}
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-2 py-1 bg-slate-900/50 hover:bg-slate-900 border border-slate-700 rounded text-[10px] text-blue-400 max-w-full transition-colors"
+                >
+                  <span className="truncate max-w-[120px]">{source.title}</span>
+                  <ExternalLink className="w-2.5 h-2.5 flex-none" />
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
         
         {/* Thinking Indicator Badge */}
         {message.isThinking && (

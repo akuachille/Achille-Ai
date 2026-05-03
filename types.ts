@@ -10,11 +10,14 @@ export interface Message {
   timestamp: number;
   image?: string; // Base64 string
   isThinking?: boolean;
+  sources?: { title: string; url: string }[];
 }
 
 export interface GenerationOptions {
   useThinking: boolean;
   useLite: boolean;
+  useSearch?: boolean;
+  useCode?: boolean;
   image?: string;
 }
 

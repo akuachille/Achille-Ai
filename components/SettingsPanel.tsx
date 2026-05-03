@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrainCircuit, Zap, Trash2, Palette } from 'lucide-react';
+import { BrainCircuit, Zap, Trash2, Search, Code } from 'lucide-react';
 
 interface SettingsPanelProps {
   useThinking: boolean;
@@ -8,6 +8,10 @@ interface SettingsPanelProps {
   setUseLite: (val: boolean) => void;
   isBananaMode: boolean;
   setIsBananaMode: (val: boolean) => void;
+  useSearch: boolean;
+  setUseSearch: (val: boolean) => void;
+  useCode: boolean;
+  setUseCode: (val: boolean) => void;
   onClearHistory: () => void;
 }
 
@@ -18,11 +22,15 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   setUseLite,
   isBananaMode,
   setIsBananaMode,
+  useSearch,
+  setUseSearch,
+  useCode,
+  setUseCode,
   onClearHistory
 }) => {
   return (
     <div className="p-4 bg-slate-900 border-t border-slate-800 overflow-hidden">
-      <div className="flex gap-4 overflow-x-auto no-scrollbar pb-1">
+      <div className="flex gap-3 overflow-x-auto no-scrollbar pb-1">
         {/* Nano Banana Mode Toggle */}
         <button
           onClick={() => {
@@ -30,6 +38,8 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
             if (!isBananaMode) {
               setUseThinking(false);
               setUseLite(false);
+              setUseSearch(false);
+              setUseCode(false);
             }
           }}
           className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-bold transition-all whitespace-nowrap ${
@@ -39,7 +49,43 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
           }`}
         >
           <span className="text-lg">🍌</span>
-          Banana Image Gen
+          Banana
+        </button>
+
+        {/* Search Toggle */}
+        <button
+          onClick={() => {
+            setUseSearch(!useSearch);
+            if (!useSearch) {
+              setIsBananaMode(false);
+            }
+          }}
+          className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all whitespace-nowrap ${
+            useSearch
+              ? 'bg-emerald-900/40 border-emerald-500 text-emerald-200 shadow-[0_0_15px_rgba(16,185,129,0.2)]'
+              : 'bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700'
+          }`}
+        >
+          <Search className="w-4 h-4" />
+          Search
+        </button>
+
+        {/* Code Toggle */}
+        <button
+          onClick={() => {
+            setUseCode(!useCode);
+            if (!useCode) {
+              setIsBananaMode(false);
+            }
+          }}
+          className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all whitespace-nowrap ${
+            useCode
+              ? 'bg-orange-900/40 border-orange-500 text-orange-200 shadow-[0_0_15px_rgba(249,115,22,0.2)]'
+              : 'bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700'
+          }`}
+        >
+          <Code className="w-4 h-4" />
+          Code
         </button>
 
         {/* Thinking Mode Toggle */}
@@ -61,7 +107,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
           }`}
         >
           <BrainCircuit className="w-4 h-4" />
-          Pro Thinking
+          Thinking
         </button>
 
         {/* Fast Mode Toggle */}
@@ -83,7 +129,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
           }`}
         >
           <Zap className="w-4 h-4" />
-          Flash Lite
+          Lite
         </button>
 
         {/* Clear History Button */}

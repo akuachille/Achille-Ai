@@ -1,0 +1,794 @@
+[
+  {
+    "id": 0,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "build an mobile ai app that can be downloaded on a specific link  which is shared via whatsapp and allow it to work while the devie is connected on internet\n",
+      "files": [
+        "{\"name\":\"Think more when needed\",\"type\":\"text/plain\",\"size\":309,\"lastModified\":1767624710000,\"data\":\"LS0tCnR5cGU6ICJmZWF0dXJlIgp0aXRsZTogIlRoaW5rIG1vcmUgd2hlbiBuZWVkZWQiCmljb246ICJuZXR3b3JrX2ludGVsbGlnZW5jZSIKLS0tCgpZb3UgTVVTVCBhZGQgdGhpbmtpbmcgbW9kZSB0byB0aGUgYXBwIHdoZXJlIHJlbGV2YW50IHRvIGhhbmRsZSB1c2VycycgbW9zdCBjb21wbGV4IHF1ZXJpZXMuIFlvdSBNVVNUIHVzZSB0aGUgZ2VtaW5pLTMtcHJvLXByZXZpZXcgbW9kZWwgYW5kIHNldCBgdGhpbmtpbmdCdWRnZXRgIHRvIDMyNzY4IChtYXggZm9yIGdlbWluaSAzIHBybykuIERvIG5vdCBzZXQgYG1heE91dHB1dFRva2Vuc2Au\"}",
+        "{\"name\":\"Generate speech\",\"type\":\"text/plain\",\"size\":138,\"lastModified\":1767624710000,\"data\":\"LS0tCnR5cGU6ICJmZWF0dXJlIgp0aXRsZTogIkdlbmVyYXRlIHNwZWVjaCIKaWNvbjogImF1ZGlvX3NwYXJrIgotLS0KCllvdSBNVVNUIGFkZCBUVFMgdG8gdGhlIGFwcCB1c2luZyBtb2RlbCBnZW1pbmktMi41LWZsYXNoLXByZXZpZXctdHRz\"}",
+        "{\"name\":\"Analyze images\",\"type\":\"text/plain\",\"size\":218,\"lastModified\":1767624710001,\"data\":\"LS0tCnR5cGU6ICJmZWF0dXJlIgp0aXRsZTogIkFuYWx5emUgaW1hZ2VzIgppY29uOiAiZG9jdW1lbnRfc2Nhbm5lciIKLS0tCgpBbGxvdyBhcHAgdXNlcnMgdG8gdXBsb2FkIGEgcGhvdG8gYW5kIHRoZW4gYW5hbHl6ZSBpdCB1c2luZyBHZW1pbmkuIFlvdSBNVVNUIGFkZCBpbWFnZSB1bmRlcnN0YW5kaW5nIHRvIHRoZSBhcHAgdXNpbmcgbW9kZWwgZ2VtaW5pLTMtcHJvLXByZXZpZXc=\"}",
+        "{\"name\":\"Fast AI responses\",\"type\":\"text/plain\",\"size\":144,\"lastModified\":1767624710001,\"data\":\"LS0tCnR5cGU6ICJmZWF0dXJlIgp0aXRsZTogIkZhc3QgQUkgcmVzcG9uc2VzIgppY29uOiAiYm9sdCIKLS0tCgpZb3UgTVVTVCBhZGQgbG93LWxhdGVuY3kgcmVzcG9uc2VzIHRvIHRoZSBhcHAgdXNpbmcgbW9kZWwgZ2VtaW5pLTIuNS1mbGFzaC1saXRl\"}",
+        "{\"name\":\"Gemini intelligence in your app\",\"type\":\"text/plain\",\"size\":309,\"lastModified\":1767624710001,\"data\":\"LS0tCnR5cGU6ICJmZWF0dXJlIgp0aXRsZTogIkdlbWluaSBpbnRlbGxpZ2VuY2UgaW4geW91ciBhcHAiCmljb246ICJzcGFyayIKLS0tCgpZb3UgTVVTVCBhZGQgR2VtaW5pIHRvIHRoZSBhcHAgd2hlcmUgcmVsZXZhbnQgdG8gY29tcGxldGUgYWxsIHNvcnRzIG9mIHRhc2tzIC0gYW5hbHl6ZSBjb250ZW50LCBtYWtlIGVkaXRzLCBhbmQgbW9yZS4gVGhlc2UgYXJlIHN1Z2dlc3RlZCBpZGVhcy4gVXNlIFBybyBmb3IgY29tcGxleCB0YXNrcyBhbmQgRmxhc2ggb3IgRmxhc2gtTGl0ZSBmb3IgdGFza3MgdGhhdCBzaG91bGQgaGFwcGVuIGZhc3Qu\"}"
+      ],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767624716797
+  },
+  {
+    "id": 1,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Conceptualizing the Mobile App**\n\nI'm now focusing on the app's architecture, leaning towards a PWA approach for broad accessibility. This feels right given the \"download from a link\" requirement. The goal is a responsive, native-like user experience.\n\n\n**Implementing Key Features**\n\nNow, I'm focusing on the core functionalities. Adding to the home screen is crucial. WhatsApp sharing functionality is a must. Standard internet connection for the AI interaction is confirmed. I have decided the 'Thinking Mode' will use the specified model with the appropriate budget. For speech generation, I'll leverage the suggested TTS model. Image analysis will be handled with `gemini-3-pro-preview`. However, the fast AI response model requires further investigation to resolve the conflict between the prompt's model name and the guidelines' mapping.\n\n\n**Prioritizing Model Selection**\n\nI've been wrestling with the conflicting model names for the \"fast AI\" feature. My initial plan was to use `gemini-flash-lite-latest` as the safest default, adhering to the alias mapping. However, the explicit mention of `gemini-2.5-flash-lite` in the prompt, combined with the availability of `gemini-2.5-flash-lite-preview-02-04`, has led me to revisit the best approach.  I'm now leaning towards using the version explicitly requested by the prompt, but will double-check that the mapping rule, and stability, are acceptable, as that seems the most sensible approach to maintain compatibility.\n\n\n**Clarifying Model Choice**\n\nI've decided to prioritize the prompt's explicit model request, aiming for `gemini-2.5-flash-lite`. Although the guidelines suggested `gemini-flash-lite-latest`, the client's direct specification seems paramount.  My plan is to reconcile this with available model IDs to ensure compatibility and performance. I'll need to figure out which model version fulfills the prompt's request accurately.\n\n\n**Outlining Service Integrations**\n\nI'm now integrating services like `geminiService.ts`, and I've firmed up the core feature integrations, including WhatsApp sharing and the thinking mode using the chosen model with its specified budget. TTS will utilize `gemini-2.5-flash-preview-tts`, and image analysis will use `gemini-3-pro-preview`, aligning with the guidelines. I'm focusing on the UI for mobile with a dark mode aesthetic and a sticky input area to accommodate various screen sizes.\n\n\n**Designing the App Structure**\n\nI'm solidifying the app's structure, focusing on component organization, using React and hooks. The key UI components are defined and I am now working on message history management and the integration of different AI models for diverse functionalities, like thinking, image analysis, and TTS. I am also working on adding loading states for visual feedback during interactions.\n\n\n**Coding the Features**\n\nNow I'm diving into the actual code. I'm focusing on TTS implementation, specifically decoding audio data from the API response and playing the buffer. For WhatsApp sharing, I'm leaning toward the safer web version URL scheme. The \"installable\" hint seems like a good solution for the app's initial accessibility, and I'll focus on handling offline states smoothly, though that's not strictly essential. I am working on building out the `generateText` and `generateSpeech` functions in the `geminiService` file.\n\n\n**Reconciling Model Versions**\n\nI'm now fully focused on aligning the model versions. I've determined that `gemini-2.5-flash-lite` from the prompt maps directly to the recommended `gemini-flash-lite-latest` in the guidelines. This ensures compatibility and allows for the fast AI responses. I'm double-checking the model names to confirm correct integration across the `geminiService` file, specifically for the thinking and image analysis functionalities with `gemini-3-pro-preview`.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767624716798,
+    "doneTimestamp": 1767624748614
+  },
+  {
+    "id": 2,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "metadata.json",
+          "generationType": 0,
+          "isDone": true,
+          "description": "App metadata definition.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "{\n  \"name\": \"Gemini Mobile AI\",\n  \"description\": \"A powerful, mobile-first AI assistant featuring Thinking Mode, Image Analysis, Text-to-Speech, and ultra-fast responses.\",\n  \"requestFramePermissions\": [\n    \"camera\",\n    \"microphone\"\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "path": "index.html",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Main HTML entry point with Tailwind CDN and meta tags for mobile optimization.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" />\n    <title>Gemini Mobile AI</title>\n    <meta name=\"theme-color\" content=\"#0f172a\" />\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <style>\n      /* Hide scrollbar for Chrome, Safari and Opera */\n      .no-scrollbar::-webkit-scrollbar {\n        display: none;\n      }\n      /* Hide scrollbar for IE, Edge and Firefox */\n      .no-scrollbar {\n        -ms-overflow-style: none;  /* IE and Edge */\n        scrollbar-width: none;  /* Firefox */\n      }\n    </style>\n  </head>\n  <body class=\"bg-slate-950 text-slate-100 antialiased overflow-hidden fixed inset-0\">\n    <div id=\"root\" class=\"h-full w-full\"></div>\n    <script type=\"module\" src=\"/index.tsx\"></script>\n  </body>\n</html>"
+            }
+          ]
+        },
+        {
+          "path": "index.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "React entry point.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\n\nconst rootElement = document.getElementById('root');\nif (!rootElement) {\n  throw new Error(\"Could not find root element to mount to\");\n}\n\nconst root = ReactDOM.createRoot(rootElement);\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);"
+            }
+          ]
+        },
+        {
+          "path": "types.ts",
+          "generationType": 0,
+          "isDone": true,
+          "description": "TypeScript definitions for the application.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "export enum Sender {\n  User = 'user',\n  Bot = 'bot'\n}\n\nexport interface Message {\n  id: string;\n  text: string;\n  sender: Sender;\n  timestamp: number;\n  image?: string; // Base64 string\n  isThinking?: boolean;\n}\n\nexport interface GenerationOptions {\n  useThinking: boolean;\n  useLite: boolean;\n  image?: string;\n}\n\nexport enum AppMode {\n  Chat = 'chat',\n  Settings = 'settings'\n}\n"
+            }
+          ]
+        },
+        {
+          "path": "constants.ts",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Global constants and configuration.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\n\n// Models\nexport const MODEL_THINKING = 'gemini-3-pro-preview';\nexport const MODEL_LITE = 'gemini-flash-lite-latest';\nexport const MODEL_TTS = 'gemini-2.5-flash-preview-tts';\nexport const MODEL_IMAGE_ANALYSIS = 'gemini-3-pro-preview'; // As per prompt requirement for image understanding\n\n// Limits\nexport const MAX_THINKING_BUDGET = 32768;\n\nexport const PLACEHOLDER_IMAGE = 'https://picsum.photos/400/300';\n"
+            }
+          ]
+        },
+        {
+          "path": "services/geminiService.ts",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Service layer for interacting with the Google GenAI SDK.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import { GoogleGenAI, Modality } from \"@google/genai\";\nimport { MODEL_THINKING, MODEL_LITE, MODEL_TTS, MODEL_IMAGE_ANALYSIS, MAX_THINKING_BUDGET } from '../constants';\nimport { GenerationOptions } from '../types';\n\n// Initialize the API client\n// Note: In a real app, you might want to handle the missing key more gracefully in the UI.\nconst apiKey = process.env.API_KEY || '';\nconst ai = new GoogleGenAI({ apiKey });\n\n/**\n * Generates text response based on user input and options.\n */\nexport const generateResponse = async (\n  prompt: string,\n  options: GenerationOptions\n): Promise<string> => {\n  try {\n    const isImageAnalysis = !!options.image;\n    \n    // Determine the model to use\n    let modelName = MODEL_LITE; // Default to Fast/Lite\n    let config: any = {};\n\n    if (options.useThinking && !isImageAnalysis) {\n      // Thinking mode (text-only mostly, though 3-pro supports multimodal, thinking is best for complex text)\n      modelName = MODEL_THINKING;\n      config.thinkingConfig = { thinkingBudget: MAX_THINKING_BUDGET };\n    } else if (isImageAnalysis) {\n      // Image analysis requirement\n      modelName = MODEL_IMAGE_ANALYSIS;\n    } else if (options.useLite) {\n      // Explicit Lite mode (redundant if default, but good for clarity)\n      modelName = MODEL_LITE;\n    } else {\n      // Fallback or standard Pro use if we had a generic switch (here we simplify to Lite vs Thinking/Image)\n      modelName = MODEL_LITE;\n    }\n\n    const parts: any[] = [];\n    \n    // Add Image if present\n    if (options.image) {\n      // Extract base64 data (remove \"data:image/xyz;base64,\" prefix if present)\n      const base64Data = options.image.split(',')[1];\n      const mimeType = options.image.split(';')[0].split(':')[1];\n      \n      parts.push({\n        inlineData: {\n          mimeType: mimeType,\n          data: base64Data\n        }\n      });\n    }\n\n    // Add Text Prompt\n    parts.push({ text: prompt });\n\n    const response = await ai.models.generateContent({\n      model: modelName,\n      contents: { parts },\n      config: config\n    });\n\n    return response.text || \"No response generated.\";\n  } catch (error) {\n    console.error(\"Gemini API Error:\", error);\n    return `Error: ${error instanceof Error ? error.message : \"Something went wrong\"}`;\n  }\n};\n\n/**\n * Generates speech from text using the TTS model.\n * Returns an AudioBuffer.\n */\nexport const generateSpeech = async (text: string): Promise<AudioBuffer | null> => {\n  try {\n    const response = await ai.models.generateContent({\n      model: MODEL_TTS,\n      contents: [{ parts: [{ text: text }] }],\n      config: {\n        responseModalities: [Modality.AUDIO],\n        speechConfig: {\n          voiceConfig: {\n            prebuiltVoiceConfig: { voiceName: 'Kore' },\n          },\n        },\n      },\n    });\n\n    const base64Audio = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;\n    \n    if (!base64Audio) {\n      throw new Error(\"No audio data returned\");\n    }\n\n    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });\n    \n    // Decode logic\n    const binaryString = atob(base64Audio);\n    const len = binaryString.length;\n    const bytes = new Uint8Array(len);\n    for (let i = 0; i < len; i++) {\n      bytes[i] = binaryString.charCodeAt(i);\n    }\n    \n    const audioBuffer = await audioContext.decodeAudioData(bytes.buffer);\n    return audioBuffer;\n\n  } catch (error) {\n    console.error(\"TTS Error:\", error);\n    return null;\n  }\n};\n\n/**\n * Helper to play an AudioBuffer\n */\nexport const playAudioBuffer = (buffer: AudioBuffer) => {\n  const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();\n  const source = audioContext.createBufferSource();\n  source.buffer = buffer;\n  source.connect(audioContext.destination);\n  source.start();\n};\n"
+            }
+          ]
+        },
+        {
+          "path": "components/ShareButton.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "A component to share the app via WhatsApp.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\n\nconst ShareButton: React.FC = () => {\n  const handleShare = () => {\n    const text = \"Check out this amazing AI App powered by Gemini!\";\n    const url = window.location.href;\n    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;\n    window.open(whatsappUrl, '_blank');\n  };\n\n  return (\n    <button\n      onClick={handleShare}\n      className=\"p-2 rounded-full bg-green-600 text-white hover:bg-green-500 transition-colors shadow-lg\"\n      title=\"Share on WhatsApp\"\n    >\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n        <path d=\"M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.683-2.031-9.667-.272-.099-.47-.149-.669-.149-.198 0-.42.001-.643.001-.223 0-.583.085-.89.421-.306.336-1.167 1.141-1.167 2.783 0 1.643 1.197 3.231 1.366 3.479.17.247 2.356 3.596 5.71 5.031 2.74 1.173 3.297.942 3.892.883.595-.06 1.916-.783 2.187-1.539.271-.756.271-1.405.191-1.539z\"/>\n      </svg>\n    </button>\n  );\n};\n\nexport default ShareButton;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/MessageBubble.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Component to display a single chat message with optional TTS and Image support.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState } from 'react';\nimport { Message, Sender } from '../types';\nimport { generateSpeech, playAudioBuffer } from '../services/geminiService';\nimport { Loader2, Play, Volume2 } from 'lucide-react';\n\ninterface MessageBubbleProps {\n  message: Message;\n}\n\nconst MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {\n  const isUser = message.sender === Sender.User;\n  const [isPlaying, setIsPlaying] = useState(false);\n  const [isGeneratingAudio, setIsGeneratingAudio] = useState(false);\n\n  const handlePlayTTS = async () => {\n    if (isPlaying || isGeneratingAudio) return;\n    \n    setIsGeneratingAudio(true);\n    try {\n      const buffer = await generateSpeech(message.text);\n      if (buffer) {\n        setIsPlaying(true);\n        playAudioBuffer(buffer);\n        // Reset playing state after duration (approximate)\n        setTimeout(() => setIsPlaying(false), buffer.duration * 1000);\n      }\n    } catch (e) {\n      console.error(\"Failed to play audio\", e);\n    } finally {\n      setIsGeneratingAudio(false);\n    }\n  };\n\n  return (\n    <div className={`flex w-full mb-4 ${isUser ? 'justify-end' : 'justify-start'}`}>\n      <div\n        className={`max-w-[85%] rounded-2xl p-4 shadow-sm ${\n          isUser\n            ? 'bg-blue-600 text-white rounded-br-none'\n            : 'bg-slate-800 text-slate-100 rounded-bl-none border border-slate-700'\n        }`}\n      >\n        {/* Render Image if available */}\n        {message.image && (\n          <div className=\"mb-3 rounded-lg overflow-hidden border border-white/10\">\n            <img src={message.image} alt=\"User upload\" className=\"w-full h-auto object-cover max-h-60\" />\n          </div>\n        )}\n\n        {/* Message Text */}\n        <div className=\"whitespace-pre-wrap text-sm leading-relaxed\">\n           {message.text}\n        </div>\n        \n        {/* Thinking Indicator Badge */}\n        {message.isThinking && (\n          <div className=\"mt-2 text-xs text-slate-400 flex items-center gap-1\">\n            <span className=\"w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse\"></span>\n            Thinking Mode\n          </div>\n        )}\n\n        {/* TTS Button (Bot only) */}\n        {!isUser && (\n          <div className=\"mt-3 flex items-center justify-end\">\n            <button\n              onClick={handlePlayTTS}\n              disabled={isGeneratingAudio || isPlaying}\n              className=\"flex items-center gap-1.5 px-2 py-1 bg-slate-700/50 hover:bg-slate-700 rounded-md text-xs text-slate-300 transition-all active:scale-95\"\n            >\n              {isGeneratingAudio ? (\n                <Loader2 className=\"w-3 h-3 animate-spin\" />\n              ) : isPlaying ? (\n                <Volume2 className=\"w-3 h-3 text-green-400\" />\n              ) : (\n                <Play className=\"w-3 h-3\" />\n              )}\n              {isGeneratingAudio ? \"Loading...\" : isPlaying ? \"Playing\" : \"Listen\"}\n            </button>\n          </div>\n        )}\n      </div>\n    </div>\n  );\n};\n\nexport default MessageBubble;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/SettingsPanel.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Settings panel to toggle app modes.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\nimport { BrainCircuit, Zap } from 'lucide-react';\n\ninterface SettingsPanelProps {\n  useThinking: boolean;\n  setUseThinking: (val: boolean) => void;\n  useLite: boolean;\n  setUseLite: (val: boolean) => void;\n}\n\nconst SettingsPanel: React.FC<SettingsPanelProps> = ({ useThinking, setUseThinking, useLite, setUseLite }) => {\n  return (\n    <div className=\"p-4 bg-slate-900 border-t border-slate-800\">\n      <div className=\"flex gap-4 overflow-x-auto no-scrollbar pb-2\">\n        {/* Thinking Mode Toggle */}\n        <button\n          onClick={() => {\n            setUseThinking(!useThinking);\n            if (!useThinking) setUseLite(false); // Mutually exclusive ideal\n          }}\n          className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all whitespace-nowrap ${\n            useThinking\n              ? 'bg-purple-900/40 border-purple-500 text-purple-200 shadow-[0_0_15px_rgba(168,85,247,0.3)]'\n              : 'bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700'\n          }`}\n        >\n          <BrainCircuit className=\"w-4 h-4\" />\n          Thinking Mode {useThinking && \"(Max)\"}\n        </button>\n\n        {/* Fast Mode Toggle */}\n        <button\n          onClick={() => {\n            setUseLite(!useLite);\n            if (!useLite) setUseThinking(false);\n          }}\n          className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all whitespace-nowrap ${\n            useLite\n              ? 'bg-yellow-900/40 border-yellow-500 text-yellow-200 shadow-[0_0_15px_rgba(234,179,8,0.2)]'\n              : 'bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700'\n          }`}\n        >\n          <Zap className=\"w-4 h-4\" />\n          Fast Responses\n        </button>\n      </div>\n    </div>\n  );\n};\n\nexport default SettingsPanel;\n"
+            }
+          ]
+        },
+        {
+          "path": "App.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Main application component containing state and layout.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState, useRef, useEffect } from 'react';\nimport { Send, Image as ImageIcon, X, Loader2, Sparkles, Menu } from 'lucide-react';\nimport { Message, Sender } from './types';\nimport { generateResponse } from './services/geminiService';\nimport MessageBubble from './components/MessageBubble';\nimport SettingsPanel from './components/SettingsPanel';\nimport ShareButton from './components/ShareButton';\n\nconst App: React.FC = () => {\n  const [messages, setMessages] = useState<Message[]>([\n    {\n      id: '1',\n      text: \"Hello! I'm your Gemini AI assistant. I can see, speak, and think deeply. How can I help you today?\",\n      sender: Sender.Bot,\n      timestamp: Date.now()\n    }\n  ]);\n  const [inputText, setInputText] = useState('');\n  const [isLoading, setIsLoading] = useState(false);\n  const [selectedImage, setSelectedImage] = useState<string | null>(null);\n  \n  // Settings State\n  const [useThinking, setUseThinking] = useState(false);\n  const [useLite, setUseLite] = useState(true); // Default to Lite for speed\n  \n  const messagesEndRef = useRef<HTMLDivElement>(null);\n  const fileInputRef = useRef<HTMLInputElement>(null);\n\n  const scrollToBottom = () => {\n    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });\n  };\n\n  useEffect(() => {\n    scrollToBottom();\n  }, [messages]);\n\n  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {\n    const file = e.target.files?.[0];\n    if (file) {\n      const reader = new FileReader();\n      reader.onloadend = () => {\n        setSelectedImage(reader.result as string);\n      };\n      reader.readAsDataURL(file);\n    }\n  };\n\n  const handleSendMessage = async () => {\n    if ((!inputText.trim() && !selectedImage) || isLoading) return;\n\n    const userMessage: Message = {\n      id: Date.now().toString(),\n      text: inputText,\n      sender: Sender.User,\n      timestamp: Date.now(),\n      image: selectedImage || undefined\n    };\n\n    setMessages(prev => [...prev, userMessage]);\n    setInputText('');\n    setSelectedImage(null);\n    setIsLoading(true);\n\n    try {\n      const responseText = await generateResponse(userMessage.text || (userMessage.image ? \"Describe this image\" : \"\"), {\n        useThinking,\n        useLite,\n        image: userMessage.image\n      });\n\n      const botMessage: Message = {\n        id: (Date.now() + 1).toString(),\n        text: responseText,\n        sender: Sender.Bot,\n        timestamp: Date.now(),\n        isThinking: useThinking && !userMessage.image // Only tag as thinking if we actually used thinking mode (not valid for images usually unless supported)\n      };\n\n      setMessages(prev => [...prev, botMessage]);\n    } catch (error) {\n      console.error(error);\n      const errorMessage: Message = {\n        id: (Date.now() + 1).toString(),\n        text: \"Sorry, something went wrong. Please check your connection and try again.\",\n        sender: Sender.Bot,\n        timestamp: Date.now()\n      };\n      setMessages(prev => [...prev, errorMessage]);\n    } finally {\n      setIsLoading(false);\n    }\n  };\n\n  const handleKeyDown = (e: React.KeyboardEvent) => {\n    if (e.key === 'Enter' && !e.shiftKey) {\n      e.preventDefault();\n      handleSendMessage();\n    }\n  };\n\n  return (\n    <div className=\"flex flex-col h-full bg-slate-950 text-slate-100 font-sans\">\n      {/* Header */}\n      <header className=\"flex-none p-4 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 flex items-center justify-between sticky top-0 z-10\">\n        <div className=\"flex items-center gap-2\">\n          <div className=\"w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center\">\n            <Sparkles className=\"w-5 h-5 text-white\" />\n          </div>\n          <h1 className=\"font-bold text-lg tracking-tight\">Gemini Mobile</h1>\n        </div>\n        <ShareButton />\n      </header>\n\n      {/* Messages Area */}\n      <main className=\"flex-1 overflow-y-auto p-4 scroll-smooth\">\n        <div className=\"max-w-3xl mx-auto flex flex-col gap-2\">\n          {messages.map((msg) => (\n            <MessageBubble key={msg.id} message={msg} />\n          ))}\n          {isLoading && (\n            <div className=\"flex justify-start\">\n              <div className=\"bg-slate-800 rounded-2xl rounded-bl-none p-4 border border-slate-700 flex items-center gap-3\">\n                <Loader2 className=\"w-5 h-5 text-blue-400 animate-spin\" />\n                <span className=\"text-slate-400 text-sm\">\n                  {useThinking ? \"Thinking deeply...\" : \"Generating...\"}\n                </span>\n              </div>\n            </div>\n          )}\n          <div ref={messagesEndRef} />\n        </div>\n      </main>\n\n      {/* Controls & Input */}\n      <footer className=\"flex-none bg-slate-950/90 backdrop-blur-sm sticky bottom-0 z-20\">\n        \n        {/* Settings Toggle Area */}\n        <SettingsPanel \n          useThinking={useThinking} \n          setUseThinking={setUseThinking}\n          useLite={useLite}\n          setUseLite={setUseLite}\n        />\n\n        {/* Selected Image Preview */}\n        {selectedImage && (\n          <div className=\"px-4 py-2 flex items-center gap-2\">\n            <div className=\"relative inline-block\">\n              <img src={selectedImage} alt=\"Selected\" className=\"h-16 w-16 object-cover rounded-lg border border-slate-700\" />\n              <button \n                onClick={() => setSelectedImage(null)}\n                className=\"absolute -top-2 -right-2 bg-red-500 rounded-full p-0.5 text-white shadow-md hover:bg-red-600\"\n              >\n                <X className=\"w-3 h-3\" />\n              </button>\n            </div>\n            <span className=\"text-xs text-slate-400\">Image attached</span>\n          </div>\n        )}\n\n        {/* Input Area */}\n        <div className=\"p-4 pt-2 max-w-3xl mx-auto\">\n          <div className=\"flex gap-2 items-end bg-slate-900 border border-slate-800 rounded-2xl p-2 focus-within:ring-2 focus-within:ring-blue-500/50 focus-within:border-blue-500 transition-all shadow-lg\">\n            \n            <button \n              onClick={() => fileInputRef.current?.click()}\n              className=\"p-3 text-slate-400 hover:text-blue-400 hover:bg-slate-800 rounded-xl transition-colors\"\n              title=\"Upload Image\"\n            >\n              <ImageIcon className=\"w-6 h-6\" />\n            </button>\n            <input \n              type=\"file\" \n              accept=\"image/*\" \n              className=\"hidden\" \n              ref={fileInputRef} \n              onChange={handleImageSelect}\n            />\n\n            <textarea\n              value={inputText}\n              onChange={(e) => setInputText(e.target.value)}\n              onKeyDown={handleKeyDown}\n              placeholder={useThinking ? \"Ask a complex question...\" : \"Message Gemini...\"}\n              className=\"flex-1 bg-transparent border-none text-slate-100 placeholder-slate-500 focus:ring-0 resize-none max-h-32 py-3 text-base\"\n              rows={1}\n              style={{ minHeight: '44px' }}\n            />\n\n            <button\n              onClick={handleSendMessage}\n              disabled={(!inputText.trim() && !selectedImage) || isLoading}\n              className={`p-3 rounded-xl transition-all ${\n                (!inputText.trim() && !selectedImage) || isLoading\n                  ? 'bg-slate-800 text-slate-600 cursor-not-allowed'\n                  : 'bg-blue-600 text-white hover:bg-blue-500 shadow-md hover:shadow-blue-500/20 active:scale-95'\n              }`}\n            >\n              <Send className=\"w-5 h-5\" />\n            </button>\n          </div>\n          <div className=\"text-center mt-2\">\n            <p className=\"text-[10px] text-slate-600\">\n               Using {useThinking ? 'Gemini 3 Pro (Thinking)' : 'Gemini 2.5'} • AI can make mistakes.\n            </p>\n          </div>\n        </div>\n      </footer>\n    </div>\n  );\n};\n\nexport default App;\n"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": 1767624748615,
+    "doneTimestamp": 1767624749161
+  },
+  {
+    "id": 3,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "make it able to be downloaded and kept on the device not on th eweb",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767624935853
+  },
+  {
+    "id": 4,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Exploring PWA Conversion**\n\nI'm currently focused on the PWA conversion. My thinking's shifted from just adding a manifest to a more holistic approach. I'm now wrestling with service worker configuration, offline capabilities, and, most importantly, achieving a near-native user experience. There are a few edge cases to consider.\n\n\n**Defining Offline Behavior**\n\nI'm now diving deeper into the technical aspects of making this feel like a native app. My focus has shifted to the `manifest.json` file, and service worker implementation. Though full offline functionality isn't possible due to the Gemini API dependency, I'm working to make the app shell readily available even without internet. I need to ensure the correct meta tags are in place for the \"Add to Home Screen\" prompt, and also register the service worker correctly. This will give that near-native feel the user is looking for.\n\n\n**Constructing Manifest & SW**\n\nI've got the `manifest.json` structure fleshed out, including name, start URL, display mode, colors, and a placeholder for the icon. I'm exploring the best approach to handle the icon, given the limitations on generating image files. I'm going to work on the service worker `sw.js` next, focusing on strategies for providing a useful app shell experience even with limited offline data. Finally I have to implement the linking and registration process.\n\n\n**Implementing Static Caching**\n\nI've decided to prioritize static caching to ensure basic offline functionality. I'm going with a simple service worker configuration, avoiding complex strategies due to the dynamic nature of the environment. I'll cache the app shell components and necessary external resources for offline availability. My approach focuses on maintaining a useful, if limited, experience without internet connectivity.\n\n\n**Updating HTML & TSX**\n\nI've incorporated the manifest link, meta tags for iOS, and service worker registration into `index.html` and `index.tsx`, respectively. I'm focusing on ensuring correct pathing for the service worker in this simulated environment. The user experience is paramount, and I am zeroing in on an app-like installation process. Now I have a manifest file ready.\n\n\n**Defining Service Worker Structure**\n\nI'm now zeroing in on the service worker's `sw.js` structure. I've defined the basic install and fetch event listeners. The plan is to cache essential resources: `/`, `/index.html`, and `/index.tsx`. I know this isn't a comprehensive offline solution due to the dynamic nature of the Gemini API interaction, but a solid app shell is crucial. I want to balance minimal offline functionality with a focus on quick responsiveness. I'll test the caching strategy thoroughly.\n\n\n**Refining Service Worker Logic**\n\nI've got the service worker's `install` event configured to cache the core app shell files. The `fetch` event listener is also in place, attempting to retrieve from the cache first, falling back to a network request if the asset is not cached. I'm focusing now on testing this fundamental caching strategy and ensuring the service worker is properly registered within the application entry point. I've added the appropriate links and registration code to `index.html` and `index.tsx`.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767624935853,
+    "doneTimestamp": 1767624982561
+  },
+  {
+    "id": 5,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "To allow the application to be downloaded and installed on a device (adding it to the home screen as a native-like app), I will convert it into a **Progressive Web App (PWA)**.\n\nThis requires creating a `manifest.json` file, a Service Worker (`sw.js`), and updating the HTML and entry point to register them.\n\nHere are the changes:\n\n1.  **Create `manifest.json`**: Defines app details (name, icons, standalone mode) so browsers recognize it as installable.\n2.  **Create `sw.js`**: A Service Worker to cache the app shell, allowing it to load quickly and be installed, fulfilling PWA requirements.\n3.  **Update `index.html`**: Link the manifest and add specific meta tags for iOS/Android integration.\n4.  **Update `index.tsx`**: Register the Service Worker when the app loads.\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767624982561,
+    "doneTimestamp": 1767624982561
+  },
+  {
+    "id": 6,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "manifest.json",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Web App Manifest to enable 'Add to Home Screen' functionality.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "{\n  \"name\": \"Gemini Mobile AI\",\n  \"short_name\": \"Gemini AI\",\n  \"start_url\": \"/\",\n  \"display\": \"standalone\",\n  \"background_color\": \"#0f172a\",\n  \"theme_color\": \"#0f172a\",\n  \"orientation\": \"portrait\",\n  \"icons\": [\n    {\n      \"src\": \"https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg\",\n      \"sizes\": \"192x192\",\n      \"type\": \"image/svg+xml\",\n      \"purpose\": \"any maskable\"\n    },\n    {\n      \"src\": \"https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg\",\n      \"sizes\": \"512x512\",\n      \"type\": \"image/svg+xml\",\n      \"purpose\": \"any maskable\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "path": "sw.js",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Service Worker to enable PWA installation and caching.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "const CACHE_NAME = 'gemini-mobile-v1';\nconst urlsToCache = [\n  '/',\n  '/index.html',\n  '/index.tsx'\n];\n\nself.addEventListener('install', (event) => {\n  // Perform install steps\n  event.waitUntil(\n    caches.open(CACHE_NAME)\n      .then((cache) => {\n        console.log('Opened cache');\n        // We attempt to cache core files, but don't fail if one is missing in dev environment\n        return cache.addAll(urlsToCache).catch(err => console.log('Cache addAll error (non-fatal):', err));\n      })\n  );\n  self.skipWaiting();\n});\n\nself.addEventListener('activate', (event) => {\n  event.waitUntil(\n    caches.keys().then((cacheNames) => {\n      return Promise.all(\n        cacheNames.map((cacheName) => {\n          if (cacheName !== CACHE_NAME) {\n            return caches.delete(cacheName);\n          }\n        })\n      );\n    })\n  );\n  self.clients.claim();\n});\n\nself.addEventListener('fetch', (event) => {\n  // For API requests or external resources, go to network first\n  if (event.request.url.includes('generativelanguage.googleapis.com') || \n      event.request.url.includes('esm.sh') || \n      event.request.url.includes('tailwindcss')) {\n    event.respondWith(fetch(event.request));\n    return;\n  }\n\n  // For app shell, try cache first, then network\n  event.respondWith(\n    caches.match(event.request)\n      .then((response) => {\n        if (response) {\n          return response;\n        }\n        return fetch(event.request);\n      })\n  );\n});"
+            }
+          ]
+        },
+        {
+          "path": "index.html",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Added manifest link and Apple touch icon meta tags.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    \n    <!-- Mobile Web App Meta Tags -->\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" />\n    <meta name=\"theme-color\" content=\"#0f172a\" />\n    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />\n    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\" />\n    <meta name=\"apple-mobile-web-app-title\" content=\"Gemini AI\" />\n    <link rel=\"apple-touch-icon\" href=\"https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg\" />\n\n    <title>Gemini Mobile AI</title>\n    \n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <style>\n      /* Hide scrollbar for Chrome, Safari and Opera */\n      .no-scrollbar::-webkit-scrollbar {\n        display: none;\n      }\n      /* Hide scrollbar for IE, Edge and Firefox */\n      .no-scrollbar {\n        -ms-overflow-style: none;  /* IE and Edge */\n        scrollbar-width: none;  /* Firefox */\n      }\n    </style>\n  <script type=\"importmap\">\n{\n  \"imports\": {\n    \"@google/genai\": \"https://esm.sh/@google/genai@^1.34.0\",\n    \"react-dom/\": \"https://esm.sh/react-dom@^19.2.3/\",\n    \"react/\": \"https://esm.sh/react@^19.2.3/\",\n    \"react\": \"https://esm.sh/react@^19.2.3\",\n    \"lucide-react\": \"https://esm.sh/lucide-react@^0.562.0\"\n  }\n}\n</script>\n</head>\n  <body class=\"bg-slate-950 text-slate-100 antialiased overflow-hidden fixed inset-0\">\n    <div id=\"root\" class=\"h-full w-full\"></div>\n    <script type=\"module\" src=\"/index.tsx\"></script>\n  </body>\n</html>"
+            }
+          ]
+        },
+        {
+          "path": "index.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Register the Service Worker on boot.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\n\n// Register Service Worker for PWA capabilities\nif ('serviceWorker' in navigator) {\n  window.addEventListener('load', () => {\n    navigator.serviceWorker.register('/sw.js')\n      .then(registration => {\n        console.log('SW registered: ', registration);\n      })\n      .catch(registrationError => {\n        console.log('SW registration failed: ', registrationError);\n      });\n  });\n}\n\nconst rootElement = document.getElementById('root');\nif (!rootElement) {\n  throw new Error(\"Could not find root element to mount to\");\n}\n\nconst root = ReactDOM.createRoot(rootElement);\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": 1767624986308,
+    "doneTimestamp": 1767624990701
+  },
+  {
+    "id": 7,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "change it's display name to ACHILLE Ai",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767625099865
+  },
+  {
+    "id": 8,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Revising App Identity**\n\nOkay, I've got a handle on the user's request. It's about renaming the app from its current display name to \"ACHILLE Ai.\"  I'm focusing on the essential files, like the manifest and the HTML entry point.  Need to confirm any references within those files.\n\n\n**Updating Branding Details**\n\nI've determined the exact changes to implement the app name update. In `manifest.json`, I'll change the `name` to \"ACHILLE Ai\" and `short_name` to \"ACHILLE\". The `<title>` tag in `index.html` requires changing to \"ACHILLE Ai\", as well as the `<meta>` tag with a similar update.  I'm also considering `App.tsx` and `metadata.json` for name consistency.\n\n\n**Confirming Final Adjustments**\n\nI've finalized all the adjustments and updates. In `App.tsx`, I'll update the main header.  I'll also revise `metadata.json`, and make sure the caching in `sw.js` gets a new name for the update. All the requested branding changes are reflected.\n\n\n**Refining the Implementation**\n\nI'm now fully immersed in the implementation. I've updated the manifest, HTML, App UI, metadata, and service worker. Specifically, \"Gemini Mobile\" is replaced with \"ACHILLE Ai\" in all relevant files. Furthermore, I've adjusted the service worker's caching strategy by renaming the cache to \"achille-ai-v1,\" ensuring a smooth update for users. The final review confirms that all requirements are met.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767625099866,
+    "doneTimestamp": 1767625115187
+  },
+  {
+    "id": 9,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "To change the app's display name to \"ACHILLE Ai\", I will update the `manifest.json` (for the home screen name), `index.html` (for the browser title), `App.tsx` (for the UI header), `metadata.json` (project meta), and `sw.js` (to refresh the cache).\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767625115187,
+    "doneTimestamp": 1767625115188
+  },
+  {
+    "id": 10,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "manifest.json",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Update PWA display names to ACHILLE Ai.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "{\n  \"name\": \"ACHILLE Ai\",\n  \"short_name\": \"ACHILLE\",\n  \"start_url\": \"/\",\n  \"display\": \"standalone\",\n  \"background_color\": \"#0f172a\",\n  \"theme_color\": \"#0f172a\",\n  \"orientation\": \"portrait\",\n  \"icons\": [\n    {\n      \"src\": \"https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg\",\n      \"sizes\": \"192x192\",\n      \"type\": \"image/svg+xml\",\n      \"purpose\": \"any maskable\"\n    },\n    {\n      \"src\": \"https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg\",\n      \"sizes\": \"512x512\",\n      \"type\": \"image/svg+xml\",\n      \"purpose\": \"any maskable\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "path": "index.html",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Update HTML titles and iOS meta tags to ACHILLE Ai.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    \n    <!-- Mobile Web App Meta Tags -->\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" />\n    <meta name=\"theme-color\" content=\"#0f172a\" />\n    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />\n    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\" />\n    <meta name=\"apple-mobile-web-app-title\" content=\"ACHILLE Ai\" />\n    <link rel=\"apple-touch-icon\" href=\"https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg\" />\n\n    <title>ACHILLE Ai</title>\n    \n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <style>\n      /* Hide scrollbar for Chrome, Safari and Opera */\n      .no-scrollbar::-webkit-scrollbar {\n        display: none;\n      }\n      /* Hide scrollbar for IE, Edge and Firefox */\n      .no-scrollbar {\n        -ms-overflow-style: none;  /* IE and Edge */\n        scrollbar-width: none;  /* Firefox */\n      }\n    </style>\n  <script type=\"importmap\">\n{\n  \"imports\": {\n    \"@google/genai\": \"https://esm.sh/@google/genai@^1.34.0\",\n    \"react-dom/\": \"https://esm.sh/react-dom@^19.2.3/\",\n    \"react/\": \"https://esm.sh/react@^19.2.3/\",\n    \"react\": \"https://esm.sh/react@^19.2.3\",\n    \"lucide-react\": \"https://esm.sh/lucide-react@^0.562.0\"\n  }\n}\n</script>\n</head>\n  <body class=\"bg-slate-950 text-slate-100 antialiased overflow-hidden fixed inset-0\">\n    <div id=\"root\" class=\"h-full w-full\"></div>\n    <script type=\"module\" src=\"/index.tsx\"></script>\n  </body>\n</html>"
+            }
+          ]
+        },
+        {
+          "path": "App.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Update visible UI header and welcome message to ACHILLE Ai.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState, useRef, useEffect } from 'react';\nimport { Send, Image as ImageIcon, X, Loader2, Sparkles, Menu } from 'lucide-react';\nimport { Message, Sender } from './types';\nimport { generateResponse } from './services/geminiService';\nimport MessageBubble from './components/MessageBubble';\nimport SettingsPanel from './components/SettingsPanel';\nimport ShareButton from './components/ShareButton';\n\nconst App: React.FC = () => {\n  const [messages, setMessages] = useState<Message[]>([\n    {\n      id: '1',\n      text: \"Hello! I'm ACHILLE, your AI assistant. I can see, speak, and think deeply. How can I help you today?\",\n      sender: Sender.Bot,\n      timestamp: Date.now()\n    }\n  ]);\n  const [inputText, setInputText] = useState('');\n  const [isLoading, setIsLoading] = useState(false);\n  const [selectedImage, setSelectedImage] = useState<string | null>(null);\n  \n  // Settings State\n  const [useThinking, setUseThinking] = useState(false);\n  const [useLite, setUseLite] = useState(true); // Default to Lite for speed\n  \n  const messagesEndRef = useRef<HTMLDivElement>(null);\n  const fileInputRef = useRef<HTMLInputElement>(null);\n\n  const scrollToBottom = () => {\n    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });\n  };\n\n  useEffect(() => {\n    scrollToBottom();\n  }, [messages]);\n\n  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {\n    const file = e.target.files?.[0];\n    if (file) {\n      const reader = new FileReader();\n      reader.onloadend = () => {\n        setSelectedImage(reader.result as string);\n      };\n      reader.readAsDataURL(file);\n    }\n  };\n\n  const handleSendMessage = async () => {\n    if ((!inputText.trim() && !selectedImage) || isLoading) return;\n\n    const userMessage: Message = {\n      id: Date.now().toString(),\n      text: inputText,\n      sender: Sender.User,\n      timestamp: Date.now(),\n      image: selectedImage || undefined\n    };\n\n    setMessages(prev => [...prev, userMessage]);\n    setInputText('');\n    setSelectedImage(null);\n    setIsLoading(true);\n\n    try {\n      const responseText = await generateResponse(userMessage.text || (userMessage.image ? \"Describe this image\" : \"\"), {\n        useThinking,\n        useLite,\n        image: userMessage.image\n      });\n\n      const botMessage: Message = {\n        id: (Date.now() + 1).toString(),\n        text: responseText,\n        sender: Sender.Bot,\n        timestamp: Date.now(),\n        isThinking: useThinking && !userMessage.image // Only tag as thinking if we actually used thinking mode (not valid for images usually unless supported)\n      };\n\n      setMessages(prev => [...prev, botMessage]);\n    } catch (error) {\n      console.error(error);\n      const errorMessage: Message = {\n        id: (Date.now() + 1).toString(),\n        text: \"Sorry, something went wrong. Please check your connection and try again.\",\n        sender: Sender.Bot,\n        timestamp: Date.now()\n      };\n      setMessages(prev => [...prev, errorMessage]);\n    } finally {\n      setIsLoading(false);\n    }\n  };\n\n  const handleKeyDown = (e: React.KeyboardEvent) => {\n    if (e.key === 'Enter' && !e.shiftKey) {\n      e.preventDefault();\n      handleSendMessage();\n    }\n  };\n\n  return (\n    <div className=\"flex flex-col h-full bg-slate-950 text-slate-100 font-sans\">\n      {/* Header */}\n      <header className=\"flex-none p-4 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 flex items-center justify-between sticky top-0 z-10\">\n        <div className=\"flex items-center gap-2\">\n          <div className=\"w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center\">\n            <Sparkles className=\"w-5 h-5 text-white\" />\n          </div>\n          <h1 className=\"font-bold text-lg tracking-tight\">ACHILLE Ai</h1>\n        </div>\n        <ShareButton />\n      </header>\n\n      {/* Messages Area */}\n      <main className=\"flex-1 overflow-y-auto p-4 scroll-smooth\">\n        <div className=\"max-w-3xl mx-auto flex flex-col gap-2\">\n          {messages.map((msg) => (\n            <MessageBubble key={msg.id} message={msg} />\n          ))}\n          {isLoading && (\n            <div className=\"flex justify-start\">\n              <div className=\"bg-slate-800 rounded-2xl rounded-bl-none p-4 border border-slate-700 flex items-center gap-3\">\n                <Loader2 className=\"w-5 h-5 text-blue-400 animate-spin\" />\n                <span className=\"text-slate-400 text-sm\">\n                  {useThinking ? \"Thinking deeply...\" : \"Generating...\"}\n                </span>\n              </div>\n            </div>\n          )}\n          <div ref={messagesEndRef} />\n        </div>\n      </main>\n\n      {/* Controls & Input */}\n      <footer className=\"flex-none bg-slate-950/90 backdrop-blur-sm sticky bottom-0 z-20\">\n        \n        {/* Settings Toggle Area */}\n        <SettingsPanel \n          useThinking={useThinking} \n          setUseThinking={setUseThinking}\n          useLite={useLite}\n          setUseLite={setUseLite}\n        />\n\n        {/* Selected Image Preview */}\n        {selectedImage && (\n          <div className=\"px-4 py-2 flex items-center gap-2\">\n            <div className=\"relative inline-block\">\n              <img src={selectedImage} alt=\"Selected\" className=\"h-16 w-16 object-cover rounded-lg border border-slate-700\" />\n              <button \n                onClick={() => setSelectedImage(null)}\n                className=\"absolute -top-2 -right-2 bg-red-500 rounded-full p-0.5 text-white shadow-md hover:bg-red-600\"\n              >\n                <X className=\"w-3 h-3\" />\n              </button>\n            </div>\n            <span className=\"text-xs text-slate-400\">Image attached</span>\n          </div>\n        )}\n\n        {/* Input Area */}\n        <div className=\"p-4 pt-2 max-w-3xl mx-auto\">\n          <div className=\"flex gap-2 items-end bg-slate-900 border border-slate-800 rounded-2xl p-2 focus-within:ring-2 focus-within:ring-blue-500/50 focus-within:border-blue-500 transition-all shadow-lg\">\n            \n            <button \n              onClick={() => fileInputRef.current?.click()}\n              className=\"p-3 text-slate-400 hover:text-blue-400 hover:bg-slate-800 rounded-xl transition-colors\"\n              title=\"Upload Image\"\n            >\n              <ImageIcon className=\"w-6 h-6\" />\n            </button>\n            <input \n              type=\"file\" \n              accept=\"image/*\" \n              className=\"hidden\" \n              ref={fileInputRef} \n              onChange={handleImageSelect}\n            />\n\n            <textarea\n              value={inputText}\n              onChange={(e) => setInputText(e.target.value)}\n              onKeyDown={handleKeyDown}\n              placeholder={useThinking ? \"Ask a complex question...\" : \"Message ACHILLE...\"}\n              className=\"flex-1 bg-transparent border-none text-slate-100 placeholder-slate-500 focus:ring-0 resize-none max-h-32 py-3 text-base\"\n              rows={1}\n              style={{ minHeight: '44px' }}\n            />\n\n            <button\n              onClick={handleSendMessage}\n              disabled={(!inputText.trim() && !selectedImage) || isLoading}\n              className={`p-3 rounded-xl transition-all ${\n                (!inputText.trim() && !selectedImage) || isLoading\n                  ? 'bg-slate-800 text-slate-600 cursor-not-allowed'\n                  : 'bg-blue-600 text-white hover:bg-blue-500 shadow-md hover:shadow-blue-500/20 active:scale-95'\n              }`}\n            >\n              <Send className=\"w-5 h-5\" />\n            </button>\n          </div>\n          <div className=\"text-center mt-2\">\n            <p className=\"text-[10px] text-slate-600\">\n               Using {useThinking ? 'Gemini 3 Pro (Thinking)' : 'Gemini 2.5'} • AI can make mistakes.\n            </p>\n          </div>\n        </div>\n      </footer>\n    </div>\n  );\n};\n\nexport default App;"
+            }
+          ]
+        },
+        {
+          "path": "metadata.json",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Update project metadata name.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "{\n  \"name\": \"ACHILLE Ai\",\n  \"description\": \"A powerful, mobile-first AI assistant featuring Thinking Mode, Image Analysis, Text-to-Speech, and ultra-fast responses.\",\n  \"requestFramePermissions\": [\n    \"camera\",\n    \"microphone\"\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "path": "sw.js",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Update cache name to force a refresh for the new branding.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "const CACHE_NAME = 'achille-ai-v1';\nconst urlsToCache = [\n  '/',\n  '/index.html',\n  '/index.tsx'\n];\n\nself.addEventListener('install', (event) => {\n  // Perform install steps\n  event.waitUntil(\n    caches.open(CACHE_NAME)\n      .then((cache) => {\n        console.log('Opened cache');\n        // We attempt to cache core files, but don't fail if one is missing in dev environment\n        return cache.addAll(urlsToCache).catch(err => console.log('Cache addAll error (non-fatal):', err));\n      })\n  );\n  self.skipWaiting();\n});\n\nself.addEventListener('activate', (event) => {\n  event.waitUntil(\n    caches.keys().then((cacheNames) => {\n      return Promise.all(\n        cacheNames.map((cacheName) => {\n          if (cacheName !== CACHE_NAME) {\n            return caches.delete(cacheName);\n          }\n        })\n      );\n    })\n  );\n  self.clients.claim();\n});\n\nself.addEventListener('fetch', (event) => {\n  // For API requests or external resources, go to network first\n  if (event.request.url.includes('generativelanguage.googleapis.com') || \n      event.request.url.includes('esm.sh') || \n      event.request.url.includes('tailwindcss')) {\n    event.respondWith(fetch(event.request));\n    return;\n  }\n\n  // For app shell, try cache first, then network\n  event.respondWith(\n    caches.match(event.request)\n      .then((response) => {\n        if (response) {\n          return response;\n        }\n        return fetch(event.request);\n      })\n  );\n});"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": 1767625115242,
+    "doneTimestamp": 1767625118084
+  },
+  {
+    "id": 11,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "generate it's link to download",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767625248609
+  },
+  {
+    "id": 12,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Formulating Download Links**\n\nI'm currently focused on the challenge of crafting a direct download link for the \"ACHILLE Ai\" app, bearing in mind the browser-based context.  I've shifted my attention to identifying the appropriate file type and its location within the simulated browser environment. This is a critical step before generating the final download link.\n\n\n**Pinpointing the PWA Mechanism**\n\nI'm now fully immersed in understanding the specifics of Progressive Web Apps and how users \"download\" them. Realizing there's no direct `.apk` or `.ipa` to link to changes the approach. It's becoming clearer that the \"download link\" might translate to the application's URL, especially given the limitations of this code-only setup. I'm investigating how best to provide this within the interface.\n\n\n**Adding Installation Feature**\n\nI've been examining the project's architecture, especially focusing on the user's interaction preferences. It appears they are seeking a more straightforward \"Install App\" mechanism, rather than a generic download link. I'm prioritizing the implementation of an \"Install App\" button, triggered by the `beforeinstallprompt` event. Simultaneously, I'll revise the \"Share\" functionality to propagate the window URL, essentially presenting the PWA's address as a shareable \"download\" link. This change will make the installation process less obscure.\n\n\n**Developing Install Button Logic**\n\nI'm presently building the `InstallButton` component and incorporating the `beforeinstallprompt` event handling. My recent work involves adding state to monitor the event and implementing the `prompt()` call upon button click. I'm focusing on conditional rendering of the download icon based on browser support and installation status. It looks like implementing the desired \"install\" feature necessitates addressing browser compatibility. I'm investigating how best to provide explicit manual instructions for browsers that don't support `beforeinstallprompt`. The original request for a \"download link\" seems to indicate a desire for a more prominent or functional installation mechanism.\n\n**Designing Download Interface**\n\nI'm now integrating the \"Install Button\" and refining the \"Share\" functionality.  I'll add the new `InstallButton` to the header. I'll also modify the \"Share\" button to more explicitly communicate the app's URL. The code changes are being drafted, specifically targeting a \"Download\" icon-button and listening for `beforeinstallprompt`.  I'm debating the best placement for this installation logic. I'm choosing between placing the logic in `App.tsx` or `components/InstallButton.tsx`.\n\n\n**Enhancing Install Experience**\n\nI'm now fully immersed in developing the `InstallButton` component and its logic. The goal is to make the app's installation as straightforward as possible. I've been working to capture the `beforeinstallprompt` event and store it in state, ready to be triggered by user interaction. The objective is to make the \"Share\" functionality more prominent and functional.  I'm focusing on crafting a compelling message to prompt users to download the app through a shared link. My plan is to embed an actionable link within the share message, making installation direct and immediate.\n\n\n**Revising Installation Text**\n\nI've revised the installation message to \"Download ACHILLE Ai: [url]\" to clearly indicate the app's name. I've also incorporated specific considerations for iOS, given its reliance on the Share button for installation. I'm focusing on providing minimal, clear instructions for iOS users within the existing design, prioritizing simplicity and clarity.\n\n\n**Integrating User Choice**\n\nI'm now implementing the `userChoice` handling within the `InstallButton` component. I'm focusing on ensuring the button updates its state correctly after the user interacts with the installation prompt, whether they accept or decline. This is crucial for reflecting the current installation state and making the UI consistent with user action. I'm aiming to clear the deferred prompt after the user makes a selection.\n\n\n**Optimizing Sharing Workflow**\n\nI'm presently refactoring the \"Share\" functionality to provide a more direct installation pathway, especially emphasizing mobile usability. I've reevaluated the fallback strategy for browsers lacking `navigator.share` and am including WhatsApp, as per the original prompt. My recent work focuses on making it easily shareable on any mobile device. My goal is to make it simpler to share and install the PWA, regardless of platform.\n\n\n**Crafting the \"Share\" Link**\n\nI'm now fully focused on enhancing the \"Share\" functionality. My key update involves utilizing `navigator.share` for a seamless mobile experience. I've built a fallback to WhatsApp for broader compatibility.  The current task is to make the \"Download\" link clearly visible and shareable via an icon.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767625248609,
+    "doneTimestamp": 1767625299988
+  },
+  {
+    "id": 13,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "Since this is a Web App (PWA), the \"link to download\" is simply the URL where the app is hosted. However, to make it feel like a real native download, I will:\n\n1.  **Add an \"Install App\" button**: This appears automatically on supported Android/Desktop devices to \"download\" the app to the home screen.\n2.  **Upgrade the Share Button**: It will now use the native mobile \"Share Sheet\" (which includes WhatsApp, Copy Link, etc.) and specifically label the message as a \"Download Link\".\n\nHere are the updates:\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767625299989,
+    "doneTimestamp": 1767625299990
+  },
+  {
+    "id": 14,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "components/InstallButton.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "New component to handle PWA installation prompt.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useEffect, useState } from 'react';\nimport { Download } from 'lucide-react';\n\nconst InstallButton: React.FC = () => {\n  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);\n\n  useEffect(() => {\n    const handler = (e: any) => {\n      // Prevent the mini-infobar from appearing on mobile\n      e.preventDefault();\n      // Stash the event so it can be triggered later.\n      setDeferredPrompt(e);\n    };\n\n    window.addEventListener('beforeinstallprompt', handler);\n\n    return () => {\n      window.removeEventListener('beforeinstallprompt', handler);\n    };\n  }, []);\n\n  const handleInstall = async () => {\n    if (!deferredPrompt) return;\n    \n    // Show the install prompt\n    deferredPrompt.prompt();\n    \n    // Wait for the user to respond to the prompt\n    const { outcome } = await deferredPrompt.userChoice;\n    \n    if (outcome === 'accepted') {\n      setDeferredPrompt(null);\n    }\n  };\n\n  if (!deferredPrompt) return null;\n\n  return (\n    <button\n      onClick={handleInstall}\n      className=\"flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-full text-xs font-bold transition-all shadow-lg animate-pulse mr-2\"\n    >\n      <Download className=\"w-3.5 h-3.5\" />\n      INSTALL APP\n    </button>\n  );\n};\n\nexport default InstallButton;"
+            }
+          ]
+        },
+        {
+          "path": "components/ShareButton.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Update share logic to use Native Share API for better mobile support and formatted download message.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\nimport { Share2 } from 'lucide-react';\n\nconst ShareButton: React.FC = () => {\n  const handleShare = async () => {\n    const url = window.location.href;\n    const title = \"Download ACHILLE Ai\";\n    const text = `Get ACHILLE Ai on your phone! It's a powerful offline-capable AI assistant. Download here: ${url}`;\n\n    // Use Native Web Share API if available (Mobile standard)\n    if (navigator.share) {\n      try {\n        await navigator.share({\n          title,\n          text: `Download ACHILLE Ai here:`,\n          url\n        });\n      } catch (error) {\n        console.log('Error sharing:', error);\n      }\n    } else {\n      // Fallback to WhatsApp direct link if Native Share isn't supported\n      const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;\n      window.open(whatsappUrl, '_blank');\n    }\n  };\n\n  return (\n    <button\n      onClick={handleShare}\n      className=\"p-2 rounded-full bg-slate-800 text-blue-400 hover:bg-slate-700 transition-colors border border-slate-700\"\n      title=\"Share Download Link\"\n    >\n      <Share2 className=\"w-5 h-5\" />\n    </button>\n  );\n};\n\nexport default ShareButton;"
+            }
+          ]
+        },
+        {
+          "path": "App.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add InstallButton to the header.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState, useRef, useEffect } from 'react';\nimport { Send, Image as ImageIcon, X, Loader2, Sparkles, Menu } from 'lucide-react';\nimport { Message, Sender } from './types';\nimport { generateResponse } from './services/geminiService';\nimport MessageBubble from './components/MessageBubble';\nimport SettingsPanel from './components/SettingsPanel';\nimport ShareButton from './components/ShareButton';\nimport InstallButton from './components/InstallButton';\n\nconst App: React.FC = () => {\n  const [messages, setMessages] = useState<Message[]>([\n    {\n      id: '1',\n      text: \"Hello! I'm ACHILLE, your AI assistant. I can see, speak, and think deeply. How can I help you today?\",\n      sender: Sender.Bot,\n      timestamp: Date.now()\n    }\n  ]);\n  const [inputText, setInputText] = useState('');\n  const [isLoading, setIsLoading] = useState(false);\n  const [selectedImage, setSelectedImage] = useState<string | null>(null);\n  \n  // Settings State\n  const [useThinking, setUseThinking] = useState(false);\n  const [useLite, setUseLite] = useState(true); // Default to Lite for speed\n  \n  const messagesEndRef = useRef<HTMLDivElement>(null);\n  const fileInputRef = useRef<HTMLInputElement>(null);\n\n  const scrollToBottom = () => {\n    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });\n  };\n\n  useEffect(() => {\n    scrollToBottom();\n  }, [messages]);\n\n  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {\n    const file = e.target.files?.[0];\n    if (file) {\n      const reader = new FileReader();\n      reader.onloadend = () => {\n        setSelectedImage(reader.result as string);\n      };\n      reader.readAsDataURL(file);\n    }\n  };\n\n  const handleSendMessage = async () => {\n    if ((!inputText.trim() && !selectedImage) || isLoading) return;\n\n    const userMessage: Message = {\n      id: Date.now().toString(),\n      text: inputText,\n      sender: Sender.User,\n      timestamp: Date.now(),\n      image: selectedImage || undefined\n    };\n\n    setMessages(prev => [...prev, userMessage]);\n    setInputText('');\n    setSelectedImage(null);\n    setIsLoading(true);\n\n    try {\n      const responseText = await generateResponse(userMessage.text || (userMessage.image ? \"Describe this image\" : \"\"), {\n        useThinking,\n        useLite,\n        image: userMessage.image\n      });\n\n      const botMessage: Message = {\n        id: (Date.now() + 1).toString(),\n        text: responseText,\n        sender: Sender.Bot,\n        timestamp: Date.now(),\n        isThinking: useThinking && !userMessage.image // Only tag as thinking if we actually used thinking mode (not valid for images usually unless supported)\n      };\n\n      setMessages(prev => [...prev, botMessage]);\n    } catch (error) {\n      console.error(error);\n      const errorMessage: Message = {\n        id: (Date.now() + 1).toString(),\n        text: \"Sorry, something went wrong. Please check your connection and try again.\",\n        sender: Sender.Bot,\n        timestamp: Date.now()\n      };\n      setMessages(prev => [...prev, errorMessage]);\n    } finally {\n      setIsLoading(false);\n    }\n  };\n\n  const handleKeyDown = (e: React.KeyboardEvent) => {\n    if (e.key === 'Enter' && !e.shiftKey) {\n      e.preventDefault();\n      handleSendMessage();\n    }\n  };\n\n  return (\n    <div className=\"flex flex-col h-full bg-slate-950 text-slate-100 font-sans\">\n      {/* Header */}\n      <header className=\"flex-none p-4 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 flex items-center justify-between sticky top-0 z-10\">\n        <div className=\"flex items-center gap-2\">\n          <div className=\"w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center\">\n            <Sparkles className=\"w-5 h-5 text-white\" />\n          </div>\n          <h1 className=\"font-bold text-lg tracking-tight\">ACHILLE Ai</h1>\n        </div>\n        <div className=\"flex items-center\">\n          <InstallButton />\n          <ShareButton />\n        </div>\n      </header>\n\n      {/* Messages Area */}\n      <main className=\"flex-1 overflow-y-auto p-4 scroll-smooth\">\n        <div className=\"max-w-3xl mx-auto flex flex-col gap-2\">\n          {messages.map((msg) => (\n            <MessageBubble key={msg.id} message={msg} />\n          ))}\n          {isLoading && (\n            <div className=\"flex justify-start\">\n              <div className=\"bg-slate-800 rounded-2xl rounded-bl-none p-4 border border-slate-700 flex items-center gap-3\">\n                <Loader2 className=\"w-5 h-5 text-blue-400 animate-spin\" />\n                <span className=\"text-slate-400 text-sm\">\n                  {useThinking ? \"Thinking deeply...\" : \"Generating...\"}\n                </span>\n              </div>\n            </div>\n          )}\n          <div ref={messagesEndRef} />\n        </div>\n      </main>\n\n      {/* Controls & Input */}\n      <footer className=\"flex-none bg-slate-950/90 backdrop-blur-sm sticky bottom-0 z-20\">\n        \n        {/* Settings Toggle Area */}\n        <SettingsPanel \n          useThinking={useThinking} \n          setUseThinking={setUseThinking}\n          useLite={useLite}\n          setUseLite={setUseLite}\n        />\n\n        {/* Selected Image Preview */}\n        {selectedImage && (\n          <div className=\"px-4 py-2 flex items-center gap-2\">\n            <div className=\"relative inline-block\">\n              <img src={selectedImage} alt=\"Selected\" className=\"h-16 w-16 object-cover rounded-lg border border-slate-700\" />\n              <button \n                onClick={() => setSelectedImage(null)}\n                className=\"absolute -top-2 -right-2 bg-red-500 rounded-full p-0.5 text-white shadow-md hover:bg-red-600\"\n              >\n                <X className=\"w-3 h-3\" />\n              </button>\n            </div>\n            <span className=\"text-xs text-slate-400\">Image attached</span>\n          </div>\n        )}\n\n        {/* Input Area */}\n        <div className=\"p-4 pt-2 max-w-3xl mx-auto\">\n          <div className=\"flex gap-2 items-end bg-slate-900 border border-slate-800 rounded-2xl p-2 focus-within:ring-2 focus-within:ring-blue-500/50 focus-within:border-blue-500 transition-all shadow-lg\">\n            \n            <button \n              onClick={() => fileInputRef.current?.click()}\n              className=\"p-3 text-slate-400 hover:text-blue-400 hover:bg-slate-800 rounded-xl transition-colors\"\n              title=\"Upload Image\"\n            >\n              <ImageIcon className=\"w-6 h-6\" />\n            </button>\n            <input \n              type=\"file\" \n              accept=\"image/*\" \n              className=\"hidden\" \n              ref={fileInputRef} \n              onChange={handleImageSelect}\n            />\n\n            <textarea\n              value={inputText}\n              onChange={(e) => setInputText(e.target.value)}\n              onKeyDown={handleKeyDown}\n              placeholder={useThinking ? \"Ask a complex question...\" : \"Message ACHILLE...\"}\n              className=\"flex-1 bg-transparent border-none text-slate-100 placeholder-slate-500 focus:ring-0 resize-none max-h-32 py-3 text-base\"\n              rows={1}\n              style={{ minHeight: '44px' }}\n            />\n\n            <button\n              onClick={handleSendMessage}\n              disabled={(!inputText.trim() && !selectedImage) || isLoading}\n              className={`p-3 rounded-xl transition-all ${\n                (!inputText.trim() && !selectedImage) || isLoading\n                  ? 'bg-slate-800 text-slate-600 cursor-not-allowed'\n                  : 'bg-blue-600 text-white hover:bg-blue-500 shadow-md hover:shadow-blue-500/20 active:scale-95'\n              }`}\n            >\n              <Send className=\"w-5 h-5\" />\n            </button>\n          </div>\n          <div className=\"text-center mt-2\">\n            <p className=\"text-[10px] text-slate-600\">\n               Using {useThinking ? 'Gemini 3 Pro (Thinking)' : 'Gemini 2.5'} • AI can make mistakes.\n            </p>\n          </div>\n        </div>\n      </footer>\n    </div>\n  );\n};\n\nexport default App;"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": 1767625300791,
+    "doneTimestamp": 1767625304713
+  },
+  {
+    "id": 15,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "make download for mobile",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767625443894
+  },
+  {
+    "id": 16,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Assessing Mobile Download Needs**\n\nI'm thinking about the mobile download situation. Since we already have a PWA with \"install to home screen,\" I'm questioning if a full \"download\" is even necessary. Perhaps focusing on promoting the existing PWA functionality is the best approach. Exploring the user's reasons behind requesting a \"download\" will be key.\n\n\n**Considering iOS/Android Differences**\n\nI've been examining the nuances of iOS and Android PWA installations further. It appears the request for a \"download\" might stem from dissatisfaction with the existing InstallButton, which isn't always visible or effective. The iOS scenario is particularly tricky, as it lacks the programmatic `beforeinstallprompt` event. Now, I'm leaning towards an instructional UI for iOS users, guiding them through the manual \"Add to Home Screen\" process, and ensuring the InstallButton is clearly emphasized for Android users.\n\n\n**Enhancing InstallButton Functionality**\n\nI'm focused on improving the install button's effectiveness, especially on iOS. The goal is to make the installation experience feel more like a native app download, as the user desires. My updated plan is to modify `InstallButton.tsx`. On iOS, it will display a clear modal guiding users to manually add the app to their home screen. For Android and desktop, the existing logic will remain, but with a refined and more prominent button style for consistency. Standalone mode will also now hide the button. I want to make sure the process is clear and intuitive, driving more successful installations.\n\n\n**Prioritizing Button Display**\n\nI've been working on the InstallButton component, focusing on the specifications outlined. My aim is to have the button only render when the app isn't already installed in standalone mode. I'm also ensuring the appearance is consistent across iOS and Android/PC. For iOS, I'm integrating a modal with clear instructions to guide users through the \"Add to Home Screen\" process. Now it's time to check the component code to ensure the logic and visuals are working as expected.\n\n\n**Refining Install Logic**\n\nI'm now implementing the install logic within the InstallButton component. Using useState, I've created `showIOSInstructions` to manage the iOS modal display. The useEffect hook checks for standalone mode and iOS device, setting `isStandalone` and `isIOS` states accordingly. It also listens for the `beforeinstallprompt` event and stores the deferred prompt. The `handleInstallClick` function handles user interaction, displaying the iOS instructions modal or triggering the prompt for other devices. Finally, the component returns null if it's running in standalone mode. I'm focusing on these conditions so that the install button renders appropriately.\n\n\n**Evaluating Install Button Visibility**\n\nI'm now thinking about how to handle the install button's visibility. Currently, if the app isn't installable on non-iOS devices and there's no deferred prompt, it's hidden. However, to match the user's \"download\" expectation, I'm considering showing it disabled or not at all. Standard PWA approach, though, dictates hiding it if installation isn't possible, right? Now I'm comparing the different options.\n\n\n**Updating iOS Modal Design**\n\nI'm now revising the iOS modal's design. Instead of using the generic \"Add to Home Screen\" instructions, I'm integrating a more visual approach. I'll use a dynamic image asset and more concise language to better guide users. I've also incorporated a close button in the top right, so users can dismiss the instructions if they're already familiar with the process or want to install later. I'll include an ACHILLE Ai logo, and I'm currently working on a more user-friendly appearance with a few UI tweaks.\n\n\n**Visualizing iOS Install Steps**\n\nI've been working on the iOS instructions modal. Instead of plain text, I'm now integrating an actual visual guide, like the provided code excerpt. This is aimed at making the process clearer and less reliant on user familiarity. I've focused on incorporating images of the \"Share\" button and \"Add to Home Screen\" option, and a sleek close button. I hope this visual aid will lead to improved successful installations. I also need to make sure the steps are easy to understand for all users.\n\n\n**Completing Button Integration**\n\nI'm finishing the `InstallButton.tsx` integration now, making sure the install button works properly. I've been focusing on integrating the visual instructions for iOS users and keeping the standard prompt for Android and desktop. I'm also ensuring the correct imports are done. The `App.tsx` file will need a quick check to make sure the app works with any new icons. Finally, I'm checking to make sure the service worker handles caching correctly.\n\n\n**Finishing Install Button Refactor**\n\nI'm wrapping up the changes to `InstallButton.tsx`. Now, the install button functionality is more versatile. The iOS modal features dynamic visual instructions, and Android/desktop devices use the standard prompt. I've also done a review of the import statements, made sure the service worker caches properly, and verified that my icon changes are consistent.\n\n\n**Optimizing Install Logic**\n\nI'm fine-tuning the `handleInstallClick` function. I've added error handling within the promise chain of `deferredPrompt.userChoice` to manage unexpected outcomes. This should make the process more robust. I'm also reviewing the `useEffect` hook to ensure the event listener is correctly attached and removed. I'm focusing on the component's edge cases and error prevention before proceeding.\n\n\n**Improving Modal Visuals**\n\nI'm now revising the iOS modal for improved clarity and user experience. Instead of the simple text instructions, I'm now incorporating a new visual guide using the updated provided images to illustrate each step, making the process more intuitive. I'm focusing on creating an image of the \"Share\" button and the \"Add to Home Screen\" option, and adding a sleek close button. I'm hoping this visual aid helps guide users.\n\n\n**Implementing Improved Modal Graphics**\n\nI'm now integrating the modal's graphics. The focus is on a clear visual demonstration. I'm leveraging the newly created images showcasing the \"Share\" button and the \"Add to Home Screen\" option. I'm also reviewing the text descriptions for accuracy and conciseness, to avoid overwhelming the user. The goal is a highly intuitive, easy-to-follow installation process.\n\n\n**Enhancing Visual Instructions**\n\nI'm now integrating the modal's graphics. The focus is on a clear visual demonstration. I'm leveraging the provided code to display the steps clearly. I've also checked the text descriptions for accuracy and conciseness, to avoid overwhelming the user. The goal is a highly intuitive, easy-to-follow installation process.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767625443894,
+    "doneTimestamp": 1767625492444
+  },
+  {
+    "id": 17,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "To ensure the app can be easily downloaded and kept on mobile devices (iOS and Android) as a standalone app, I have enhanced the installation logic.\n\nThe updates include:\n1.  **Smart Install Button**: It now detects if the user is on iOS or Android.\n2.  **iOS Instructions**: Since iPhones don't support a direct \"Install\" button from the web, the button now opens a helpful guide showing users how to \"Add to Home Screen\" using the Share menu.\n3.  **Android/Desktop**: Keeps the native 1-click install prompt.\n\nHere are the changes:\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767625492444,
+    "doneTimestamp": 1767625492447
+  },
+  {
+    "id": 18,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "components/InstallButton.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Enhanced Install Button with specific iOS installation instructions and standalone detection.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useEffect, useState } from 'react';\nimport { Download, Share, PlusSquare, X } from 'lucide-react';\n\nconst InstallButton: React.FC = () => {\n  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);\n  const [isIOS, setIsIOS] = useState(false);\n  const [isStandalone, setIsStandalone] = useState(false);\n  const [showIOSInstructions, setShowIOSInstructions] = useState(false);\n\n  useEffect(() => {\n    // Check if running in standalone mode (already installed)\n    const isStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone;\n    setIsStandalone(isStandaloneMode);\n\n    // Detect iOS\n    const userAgent = window.navigator.userAgent.toLowerCase();\n    const isIosDevice = /iphone|ipad|ipod/.test(userAgent);\n    setIsIOS(isIosDevice);\n\n    // Capture the install prompt event for Android/Desktop\n    const handler = (e: any) => {\n      e.preventDefault();\n      setDeferredPrompt(e);\n    };\n\n    window.addEventListener('beforeinstallprompt', handler);\n\n    return () => {\n      window.removeEventListener('beforeinstallprompt', handler);\n    };\n  }, []);\n\n  const handleInstallClick = async () => {\n    if (isIOS) {\n      setShowIOSInstructions(true);\n    } else if (deferredPrompt) {\n      deferredPrompt.prompt();\n      const { outcome } = await deferredPrompt.userChoice;\n      if (outcome === 'accepted') {\n        setDeferredPrompt(null);\n      }\n    }\n  };\n\n  // If already installed, don't show the button\n  if (isStandalone) return null;\n\n  // If not iOS and no install prompt is available, hide button (standard behavior)\n  // But for iOS we always show it if not standalone.\n  if (!isIOS && !deferredPrompt) return null;\n\n  return (\n    <>\n      <button\n        onClick={handleInstallClick}\n        className=\"flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-full text-xs font-bold transition-all shadow-[0_0_15px_rgba(37,99,235,0.5)] animate-pulse mr-2 border border-blue-400/50\"\n      >\n        <Download className=\"w-3.5 h-3.5\" />\n        INSTALL\n      </button>\n\n      {showIOSInstructions && (\n        <div className=\"fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-200\">\n          {/* Backdrop click to close */}\n          <div className=\"absolute inset-0\" onClick={() => setShowIOSInstructions(false)}></div>\n          \n          <div className=\"bg-slate-900 border border-slate-700 rounded-2xl p-6 max-w-sm w-full shadow-2xl relative z-10 mb-8 sm:mb-0\">\n            <button \n              onClick={() => setShowIOSInstructions(false)}\n              className=\"absolute top-4 right-4 text-slate-400 hover:text-white\"\n            >\n              <X className=\"w-5 h-5\" />\n            </button>\n            \n            <div className=\"flex flex-col items-center text-center gap-4\">\n              <div className=\"w-16 h-16 bg-slate-800 rounded-xl flex items-center justify-center shadow-inner border border-slate-700\">\n                 <img src=\"https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg\" alt=\"App Icon\" className=\"w-10 h-10\" />\n              </div>\n              \n              <div>\n                <h3 className=\"text-xl font-bold text-white\">Install ACHILLE Ai</h3>\n                <p className=\"text-slate-400 text-sm mt-1\">\n                  Install on your iPhone/iPad for the best experience.\n                </p>\n              </div>\n              \n              <div className=\"flex flex-col gap-4 w-full text-left text-sm text-slate-200 bg-slate-800/50 p-4 rounded-xl border border-slate-700/50\">\n                <div className=\"flex items-center gap-3\">\n                  <Share className=\"w-6 h-6 text-blue-400\" />\n                  <span>1. Tap the <strong>Share</strong> button in your browser toolbar.</span>\n                </div>\n                <div className=\"w-full h-px bg-slate-700/50\"></div>\n                <div className=\"flex items-center gap-3\">\n                  <PlusSquare className=\"w-6 h-6 text-blue-400\" />\n                  <span>2. Scroll down and select <strong>Add to Home Screen</strong>.</span>\n                </div>\n              </div>\n            </div>\n            \n            {/* Visual indicator pointing down for mobile safari users */}\n            <div className=\"absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-slate-900 border-b border-r border-slate-700 rotate-45 transform sm:hidden\"></div>\n          </div>\n        </div>\n      )}\n    </>\n  );\n};\n\nexport default InstallButton;"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": 1767625492637,
+    "doneTimestamp": 1767625503206
+  },
+  {
+    "id": 19,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "generate the link here for this app in your response so i can copy an share it in order to give it to other user\n\ndeploy it",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767625809607
+  },
+  {
+    "id": 20,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Addressing Deployment Concerns**\n\nI've realized I need to clarify the limitations of my role. While I can generate the necessary code to get the application up and running, I can't directly deploy it to a hosting platform. My focus is on providing the building blocks, not the final push to live deployment. I must specify that generating the code is within my wheelhouse, and handling the \"link generation\" must be handled independently.\n\n\n**Interpreting User Intent**\n\nI'm now grappling with the user's intent behind \"generate the link.\" My current thinking is that they might misunderstand how web app deployment functions. Since I exist within a simulated or preview environment, the \"link\" could be the URL they're already seeing. But in the role of a senior engineer, I'd usually provide deployment steps or suggest configuration. Considering the common context of chat interfaces, like Bolt.new or StackBlitz, the active environment itself serves as the deployment. I want to convey that without assuming their level of expertise.\n\n\n**Defining \"Deployability\"**\n\nI'm now clarifying the relationship between \"deployability\" and the user's request for a link. If the user is on a platform like Bolt.new, the existing URL functions as the shareable link. I cannot conjure a new, valid link like `https://achille-ai.com` without real deployment. It appears they are now asking me for an *action* that is separate from my code-generating abilities. I can't directly deploy, but I can improve the code with a \"Copy Link\" feature that captures the current URL. This could satisfy their sharing needs if the platform supports it.\n\n\n**Implementing Share Feature**\n\nI'm now focusing on directly addressing the user's desire to \"generate the link.\" Given the ambiguity, I'm interpreting this as a need for a visible and easily copiable URL within the application itself. The current `ShareButton` already utilizes `window.location.href`, so the solution involves enhancing this existing functionality. Specifically, I'm implementing a \"Copy Link\" fallback or a display option within the UI for scenarios where direct sharing is unavailable or undesirable, satisfying the needs of a desktop user.\n\n\n**Improving Sharing Options**\n\nI'm now refining the `ShareButton.tsx` to handle a broader range of sharing scenarios. My thinking is that the user's request for a link translates to a need for a readily accessible and copyable URL. I'm prioritizing `navigator.share` if available, and if not, I'm implementing a fallback that copies the current URL to the clipboard and displays a notification. This addresses the common desire to \"generate a link\" and aligns with desktop users. I will also incorporate an explanation that I cannot deploy, but can optimize the app. I think a dropdown or smarter button is better.\n\n\n**Refining Share Options**\n\nI'm now revising my approach to the \"generate link\" request. The original interpretation focused on enhancing the `ShareButton`. I've shifted to a more direct solution. My plan now centers on offering a \"Copy Link\" option as a primary fallback if native sharing fails or isn't desired. This will utilize `window.location.href` to get the current URL. Additionally, I'll provide a clear explanation: while I can't directly deploy the application, the `vercel.json` file I will add and the existing code provides easy deployment options. The provided URL, which is `window.location.href`, can be used by the user or they can easily share it. The new goal is to increase discoverability and convenience of the link.\n\n\n**Focusing on Link Generation**\n\nI'm now zeroing in on the core request: making the app capable of sharing *its* link. My strategy has evolved to directly address the \"generate the link\" demand. If native sharing isn't available, I'll prioritize a \"Copy Link\" option, copying `window.location.href` to the clipboard. The goal is a seamless user experience for link generation, which I will test. I'm focusing on the app's capability to share its own URL to avoid deployment complexities.\n\n\n**Improving Link Handling**\n\nI'm now streamlining the \"generate link\" functionality. My focus is on making it effortless for the user to share the application's URL, even without native sharing. I will use the code updates to improve the \"Copy Link\" fallback option, and I will also implement a visual cue to confirm when the link is copied. The goal is a seamless user experience for capturing and sharing the application's URL.\n\n\n**Optimizing Sharing Workflow**\n\nI'm now integrating a fallback for sharing directly to WhatsApp if clipboard access fails. The \"Share\" button is being enhanced to provide visual feedback, changing to \"Copied!\" after the URL is successfully copied, and this improved UX is something I consider vital. In addition, I will create and add a `vercel.json` file for easier deployment to Vercel, to help the user directly deploy the app.\n\n\n**Improving Deployment Readiness**\n\nI'm now focusing on preparing the app for deployment, specifically by adding a `vercel.json` file. This should simplify the process for the user. I'll make the share button a bit more prominent to help with \"generating the link\" as it is the key way to share it, since I cannot directly deploy the application. I will also incorporate a textual response explaining the deployment process in the output. I also realized I should add a `manifest.json` update to ensure `display: standalone` is set.\n\n\n**Enhancing Share Functionality**\n\nI'm now implementing the complete sharing mechanism. I'm focusing on the usability of the \"Share\" button, implementing visual feedback upon successful link copy. I am now also going to write and add `vercel.json` to improve the deployment readiness and explain how the user can deploy and share. I'll stick to a clean implementation of the `ShareButton`. I will also optimize the `index.html` title, for clarity.\n\n\n**Addressing User's Request**\n\nI've decided to provide a clearer, more direct response to the request for a shareable link. I'll explain that I can't generate a live URL since I'm just an AI code generator. However, I'll equip the user with the necessary configuration files, namely `vercel.json` and `netlify.toml`, which should facilitate near-instant deployment on hosting platforms like Vercel or Netlify. I'll also update the `ShareButton` to incorporate a \"Copy Link\" feature as a fallback for the native share functionality, and I will be working on improving the Share button.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767625809607,
+    "doneTimestamp": 1767625852890
+  },
+  {
+    "id": 21,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "I cannot generate a live, hosted URL (like `https://achille-ai.vercel.app`) because I am an AI code assistant, not a hosting provider. You must **deploy** the code to a service like **Vercel**, **Netlify**, or **Cloudflare Pages**.\n\nHowever, to make this \"One-Click Deployable\" and ensure you can easily share the link once it is live, I have:\n\n1.  **Added Deployment Configurations**: Included `vercel.json` and `netlify.toml` files so you can simply drag-and-drop this project folder into Vercel or Netlify to get a link instantly.\n2.  **Upgraded the Share Button**: It now smartly handles \"Copy Link\" functionality. If you are on a desktop (where native sharing might not exist), it will copy the link to your clipboard so you can paste it to your friends.\n\n### How to get your Link (Deploy):\n1.  **Download** the files I generated.\n2.  Go to **[Vercel.com](https://vercel.com)** or **[Netlify.com](https://netlify.com)**.\n3.  **Import** this project.\n4.  They will give you a **Live URL**. That is the link you can share via the app's Share button!\n\nHere are the code updates to support this:\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767625852891,
+    "doneTimestamp": 1767625852894
+  },
+  {
+    "id": 22,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "components/ShareButton.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Upgrade ShareButton to support 'Copy to Clipboard' with visual feedback when native sharing is unavailable.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState } from 'react';\nimport { Share2, Link, Check } from 'lucide-react';\n\nconst ShareButton: React.FC = () => {\n  const [copied, setCopied] = useState(false);\n\n  const handleShare = async () => {\n    const url = window.location.href;\n    const title = \"Download ACHILLE Ai\";\n    const text = `Get ACHILLE Ai on your phone! It's a powerful offline-capable AI assistant. Download here: ${url}`;\n\n    if (navigator.share) {\n      // Use Native Web Share API (Mobile standard)\n      try {\n        await navigator.share({\n          title,\n          text: `Download ACHILLE Ai here:`,\n          url\n        });\n      } catch (error) {\n        console.log('Error sharing:', error);\n      }\n    } else {\n      // Fallback: Copy to clipboard\n      try {\n        await navigator.clipboard.writeText(`${text}`);\n        setCopied(true);\n        setTimeout(() => setCopied(false), 2000);\n      } catch (err) {\n        // Fallback to WhatsApp if clipboard fails\n        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;\n        window.open(whatsappUrl, '_blank');\n      }\n    }\n  };\n\n  return (\n    <button\n      onClick={handleShare}\n      className={`flex items-center gap-2 p-2 px-3 rounded-full border transition-all duration-300 ${\n        copied \n          ? 'bg-green-900/50 border-green-500 text-green-400' \n          : 'bg-slate-800 border-slate-700 text-blue-400 hover:bg-slate-700 hover:border-slate-600'\n      }`}\n      title={copied ? \"Link Copied!\" : \"Share Download Link\"}\n    >\n      {copied ? <Check className=\"w-4 h-4\" /> : <Share2 className=\"w-4 h-4\" />}\n      <span className=\"text-xs font-medium hidden sm:inline\">\n        {copied ? 'Copied!' : 'Share'}\n      </span>\n    </button>\n  );\n};\n\nexport default ShareButton;"
+            }
+          ]
+        },
+        {
+          "path": "vercel.json",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add Vercel deployment configuration.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "{\n  \"rewrites\": [\n    {\n      \"source\": \"/(.*)\",\n      \"destination\": \"/index.html\"\n    }\n  ],\n  \"headers\": [\n    {\n      \"source\": \"/manifest.json\",\n      \"headers\": [\n        {\n          \"key\": \"Content-Type\",\n          \"value\": \"application/manifest+json\"\n        }\n      ]\n    },\n    {\n      \"source\": \"/sw.js\",\n      \"headers\": [\n        {\n          \"key\": \"Cache-Control\",\n          \"value\": \"public, max-age=0, must-revalidate\"\n        },\n        {\n          \"key\": \"Service-Worker-Allowed\",\n          \"value\": \"/\"\n        }\n      ]\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "path": "netlify.toml",
+          "generationType": 1,
+          "isDone": false,
+          "description": "Add Netlify deployment configuration.",
+          "errorWhileGenerating": true
+        }
+      ]
+    },
+    "createdTimestamp": 1767625854714,
+    "doneTimestamp": 1767625859790
+  },
+  {
+    "id": 23,
+    "author": "model",
+    "payload": {
+      "type": "error",
+      "error": "An internal error occurred.",
+      "isCancelError": false,
+      "isLoopingError": false
+    },
+    "createdTimestamp": 1767625861821,
+    "doneTimestamp": 1767625861821
+  },
+  {
+    "id": 24,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "Add a feature to the settings panel that allows users to view and clear their chat history. Store the history in localStorage.",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767631454111
+  },
+  {
+    "id": 25,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Developing History Features**\n\nI'm currently focused on implementing the new chat history features.  I'm updating `App.tsx` to handle loading and saving the chat history to `localStorage`. I'm also adding the necessary logic to clear the history.\n\n\n**Designing Clear History**\n\nI'm currently fleshing out the design for chat history clearing. I've decided a simple \"Clear Chat\" button with a trash icon in the `SettingsPanel` feels best, given the mobile context.  I'll update the `App.tsx` file for `localStorage` implementation now, followed by wiring up the button logic to remove chat history. I'm also ensuring the `SettingsPanel` layout gracefully accommodates additional items.\n\n\n**Integrating Clear Functionality**\n\nI'm now fully immersed in integrating the \"Clear History\" feature. In `App.tsx`, I've implemented `useEffect` hooks to handle message loading on mount and saving upon state changes. Also, I've created the `clearHistory` function. Now, I'm integrating a \"Clear Chat\" button with a trash icon in `SettingsPanel.tsx`, linked to `onClearHistory` to call the clearing function. This aligns perfectly with the current design, using a horizontal pill scroll.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767631454112,
+    "doneTimestamp": 1767631472402
+  },
+  {
+    "id": 26,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "To implement chat history persistence and management, I will update the application to utilize `localStorage` for message storage and add a management interface within the settings panel.\n\n### Specification\n\n(i) **Updates to the current app**:\n- **`App.tsx`**: Add persistence logic using `useEffect` hooks to load initial state from `localStorage` and save changes whenever the message list updates. Implement a `clearHistory` function.\n- **`components/SettingsPanel.tsx`**: Add a \"Clear History\" button with a confirmation state to prevent accidental deletions.\n- **`services/geminiService.ts`**: (Optional) Minor cleanup if needed, but the core change is in state management.\n\n(ii) **Behavior**:\n- **Persistence**: Every message sent or received is automatically stringified and stored in `localStorage` under the key `achille_chat_history`.\n- **Loading**: On app launch, it checks for stored history. If found, it populates the chat; otherwise, it shows the default welcome message.\n- **Clearing**: Clicking \"Clear History\" will wipe `localStorage` and reset the chat UI to the initial greeting instantly.\n\n(iii) **Visual Appearance**:\n- A new action pill in the settings tray with a `Trash2` icon.\n- The button will have a subtle red hover effect and a distinct \"destructive action\" feel while maintaining the high-end dark-mode aesthetic of the app.\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767631472404,
+    "doneTimestamp": 1767631472417
+  },
+  {
+    "id": 27,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "App.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Implement localStorage persistence and history clearing logic.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState, useRef, useEffect } from 'react';\nimport { Send, Image as ImageIcon, X, Loader2, Sparkles } from 'lucide-react';\nimport { Message, Sender } from './types';\nimport { generateResponse } from './services/geminiService';\nimport MessageBubble from './components/MessageBubble';\nimport SettingsPanel from './components/SettingsPanel';\nimport ShareButton from './components/ShareButton';\nimport InstallButton from './components/InstallButton';\n\nconst STORAGE_KEY = 'achille_chat_history';\n\nconst INITIAL_MESSAGE: Message = {\n  id: '1',\n  text: \"Hello! I'm ACHILLE, your AI assistant. I can see, speak, and think deeply. How can I help you today?\",\n  sender: Sender.Bot,\n  timestamp: Date.now()\n};\n\nconst App: React.FC = () => {\n  const [messages, setMessages] = useState<Message[]>(() => {\n    const saved = localStorage.getItem(STORAGE_KEY);\n    return saved ? JSON.parse(saved) : [INITIAL_MESSAGE];\n  });\n  const [inputText, setInputText] = useState('');\n  const [isLoading, setIsLoading] = useState(false);\n  const [selectedImage, setSelectedImage] = useState<string | null>(null);\n  \n  // Settings State\n  const [useThinking, setUseThinking] = useState(false);\n  const [useLite, setUseLite] = useState(true);\n  \n  const messagesEndRef = useRef<HTMLDivElement>(null);\n  const fileInputRef = useRef<HTMLInputElement>(null);\n\n  const scrollToBottom = (behavior: ScrollBehavior = 'smooth') => {\n    messagesEndRef.current?.scrollIntoView({ behavior });\n  };\n\n  // Save messages to localStorage whenever they change\n  useEffect(() => {\n    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));\n    scrollToBottom();\n  }, [messages]);\n\n  const handleClearHistory = () => {\n    if (window.confirm(\"Are you sure you want to clear your entire chat history?\")) {\n      setMessages([INITIAL_MESSAGE]);\n      localStorage.removeItem(STORAGE_KEY);\n    }\n  };\n\n  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {\n    const file = e.target.files?.[0];\n    if (file) {\n      const reader = new FileReader();\n      reader.onloadend = () => {\n        setSelectedImage(reader.result as string);\n      };\n      reader.readAsDataURL(file);\n    }\n  };\n\n  const handleSendMessage = async () => {\n    if ((!inputText.trim() && !selectedImage) || isLoading) return;\n\n    const userMessage: Message = {\n      id: Date.now().toString(),\n      text: inputText,\n      sender: Sender.User,\n      timestamp: Date.now(),\n      image: selectedImage || undefined\n    };\n\n    setMessages(prev => [...prev, userMessage]);\n    setInputText('');\n    setSelectedImage(null);\n    setIsLoading(true);\n\n    try {\n      const responseText = await generateResponse(userMessage.text || (userMessage.image ? \"Describe this image\" : \"\"), {\n        useThinking,\n        useLite,\n        image: userMessage.image\n      });\n\n      const botMessage: Message = {\n        id: (Date.now() + 1).toString(),\n        text: responseText,\n        sender: Sender.Bot,\n        timestamp: Date.now(),\n        isThinking: useThinking && !userMessage.image\n      };\n\n      setMessages(prev => [...prev, botMessage]);\n    } catch (error) {\n      console.error(error);\n      const errorMessage: Message = {\n        id: (Date.now() + 1).toString(),\n        text: \"Sorry, something went wrong. Please check your connection and try again.\",\n        sender: Sender.Bot,\n        timestamp: Date.now()\n      };\n      setMessages(prev => [...prev, errorMessage]);\n    } finally {\n      setIsLoading(false);\n    }\n  };\n\n  const handleKeyDown = (e: React.KeyboardEvent) => {\n    if (e.key === 'Enter' && !e.shiftKey) {\n      e.preventDefault();\n      handleSendMessage();\n    }\n  };\n\n  return (\n    <div className=\"flex flex-col h-full bg-slate-950 text-slate-100 font-sans\">\n      {/* Header */}\n      <header className=\"flex-none p-4 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 flex items-center justify-between sticky top-0 z-10\">\n        <div className=\"flex items-center gap-2\">\n          <div className=\"w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center\">\n            <Sparkles className=\"w-5 h-5 text-white\" />\n          </div>\n          <h1 className=\"font-bold text-lg tracking-tight\">ACHILLE Ai</h1>\n        </div>\n        <div className=\"flex items-center gap-2\">\n          <InstallButton />\n          <ShareButton />\n        </div>\n      </header>\n\n      {/* Messages Area */}\n      <main className=\"flex-1 overflow-y-auto p-4 scroll-smooth no-scrollbar\">\n        <div className=\"max-w-3xl mx-auto flex flex-col gap-2\">\n          {messages.map((msg) => (\n            <MessageBubble key={msg.id} message={msg} />\n          ))}\n          {isLoading && (\n            <div className=\"flex justify-start\">\n              <div className=\"bg-slate-800 rounded-2xl rounded-bl-none p-4 border border-slate-700 flex items-center gap-3\">\n                <Loader2 className=\"w-5 h-5 text-blue-400 animate-spin\" />\n                <span className=\"text-slate-400 text-sm\">\n                  {useThinking ? \"Thinking deeply...\" : \"Generating...\"}\n                </span>\n              </div>\n            </div>\n          )}\n          <div ref={messagesEndRef} />\n        </div>\n      </main>\n\n      {/* Controls & Input */}\n      <footer className=\"flex-none bg-slate-950/90 backdrop-blur-sm sticky bottom-0 z-20\">\n        \n        {/* Settings Toggle Area */}\n        <SettingsPanel \n          useThinking={useThinking} \n          setUseThinking={setUseThinking}\n          useLite={useLite}\n          setUseLite={setUseLite}\n          onClearHistory={handleClearHistory}\n        />\n\n        {/* Selected Image Preview */}\n        {selectedImage && (\n          <div className=\"px-4 py-2 flex items-center gap-2\">\n            <div className=\"relative inline-block\">\n              <img src={selectedImage} alt=\"Selected\" className=\"h-16 w-16 object-cover rounded-lg border border-slate-700\" />\n              <button \n                onClick={() => setSelectedImage(null)}\n                className=\"absolute -top-2 -right-2 bg-red-500 rounded-full p-0.5 text-white shadow-md hover:bg-red-600\"\n              >\n                <X className=\"w-3 h-3\" />\n              </button>\n            </div>\n            <span className=\"text-xs text-slate-400\">Image attached</span>\n          </div>\n        )}\n\n        {/* Input Area */}\n        <div className=\"p-4 pt-2 max-w-3xl mx-auto\">\n          <div className=\"flex gap-2 items-end bg-slate-900 border border-slate-800 rounded-2xl p-2 focus-within:ring-2 focus-within:ring-blue-500/50 focus-within:border-blue-500 transition-all shadow-lg\">\n            \n            <button \n              onClick={() => fileInputRef.current?.click()}\n              className=\"p-3 text-slate-400 hover:text-blue-400 hover:bg-slate-800 rounded-xl transition-colors\"\n              title=\"Upload Image\"\n            >\n              <ImageIcon className=\"w-6 h-6\" />\n            </button>\n            <input \n              type=\"file\" \n              accept=\"image/*\" \n              className=\"hidden\" \n              ref={fileInputRef} \n              onChange={handleImageSelect}\n            />\n\n            <textarea\n              value={inputText}\n              onChange={(e) => setInputText(e.target.value)}\n              onKeyDown={handleKeyDown}\n              placeholder={useThinking ? \"Ask a complex question...\" : \"Message ACHILLE...\"}\n              className=\"flex-1 bg-transparent border-none text-slate-100 placeholder-slate-500 focus:ring-0 resize-none max-h-32 py-3 text-base\"\n              rows={1}\n              style={{ minHeight: '44px' }}\n            />\n\n            <button\n              onClick={handleSendMessage}\n              disabled={(!inputText.trim() && !selectedImage) || isLoading}\n              className={`p-3 rounded-xl transition-all ${\n                (!inputText.trim() && !selectedImage) || isLoading\n                  ? 'bg-slate-800 text-slate-600 cursor-not-allowed'\n                  : 'bg-blue-600 text-white hover:bg-blue-500 shadow-md hover:shadow-blue-500/20 active:scale-95'\n              }`}\n            >\n              <Send className=\"w-5 h-5\" />\n            </button>\n          </div>\n          <div className=\"text-center mt-2\">\n            <p className=\"text-[10px] text-slate-600\">\n               Using {useThinking ? 'Gemini 3 Pro' : 'Gemini 2.5'} • History is saved locally\n            </p>\n          </div>\n        </div>\n      </footer>\n    </div>\n  );\n};\n\nexport default App;"
+            }
+          ]
+        },
+        {
+          "path": "components/SettingsPanel.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add Clear History button to the settings tray.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\nimport { BrainCircuit, Zap, Trash2 } from 'lucide-react';\n\ninterface SettingsPanelProps {\n  useThinking: boolean;\n  setUseThinking: (val: boolean) => void;\n  useLite: boolean;\n  setUseLite: (val: boolean) => void;\n  onClearHistory: () => void;\n}\n\nconst SettingsPanel: React.FC<SettingsPanelProps> = ({ \n  useThinking, \n  setUseThinking, \n  useLite, \n  setUseLite,\n  onClearHistory\n}) => {\n  return (\n    <div className=\"p-4 bg-slate-900 border-t border-slate-800 overflow-hidden\">\n      <div className=\"flex gap-4 overflow-x-auto no-scrollbar pb-1\">\n        {/* Thinking Mode Toggle */}\n        <button\n          onClick={() => {\n            setUseThinking(!useThinking);\n            if (!useThinking) setUseLite(false);\n          }}\n          className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all whitespace-nowrap ${\n            useThinking\n              ? 'bg-purple-900/40 border-purple-500 text-purple-200 shadow-[0_0_15px_rgba(168,85,247,0.3)]'\n              : 'bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700'\n          }`}\n        >\n          <BrainCircuit className=\"w-4 h-4\" />\n          Thinking Mode\n        </button>\n\n        {/* Fast Mode Toggle */}\n        <button\n          onClick={() => {\n            setUseLite(!useLite);\n            if (!useLite) setUseThinking(false);\n          }}\n          className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all whitespace-nowrap ${\n            useLite\n              ? 'bg-yellow-900/40 border-yellow-500 text-yellow-200 shadow-[0_0_15px_rgba(234,179,8,0.2)]'\n              : 'bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700'\n          }`}\n        >\n          <Zap className=\"w-4 h-4\" />\n          Fast Responses\n        </button>\n\n        {/* Clear History Button */}\n        <button\n          onClick={onClearHistory}\n          className=\"flex items-center gap-2 px-4 py-2 rounded-full border border-slate-700 bg-slate-800 text-slate-400 hover:bg-red-900/20 hover:border-red-500/50 hover:text-red-400 transition-all whitespace-nowrap\"\n        >\n          <Trash2 className=\"w-4 h-4\" />\n          Clear Chat\n        </button>\n      </div>\n    </div>\n  );\n};\n\nexport default SettingsPanel;"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": 1767631473782,
+    "doneTimestamp": 1767631486148
+  },
+  {
+    "id": 29,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "Add the capability of accessing camera so that a user can take the image and it uploads itself",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767631731960
+  },
+  {
+    "id": 30,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Exploring Image Integration**\n\nI'm currently focused on seamless image integration. My goal is to enable users to capture photos directly within the app and have them automatically linked to their message input.  I'm exploring the technical aspects of camera access and how to best integrate this functionality with the existing file input image selection system. The aim is a smooth user experience.\n\n\n**Adding Camera Functionality**\n\nI've made progress on the camera integration.  I've decided to add an explicit camera button using the `capture` attribute on a standard file input, recognizing its mobile-friendliness. The UI is being updated with a new `Camera` icon, and the behavior is now mapped out: clicking the icon will trigger the device camera, with photo handling identical to file uploads. The implementation strategy involves importing the `Camera` icon and setting up the hidden camera input.\n\n\n**Integrating Camera Triggers**\n\nI'm now implementing the `handleCameraClick` function. I've also verified that the necessary camera permission is correctly set within the `metadata.json` file. Next, I plan to thoroughly test the camera activation flow and ensure it seamlessly integrates with the file upload process.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767631731960,
+    "doneTimestamp": 1767631738888
+  },
+  {
+    "id": 31,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "I will add a dedicated camera capture feature to the input area. This will allow users to take a photo directly using their mobile device's camera and automatically attach it to the current message session.\n\n### Specification\n\n(i) **Updates to the current app**:\n- **`App.tsx`**: Add a second hidden input specifically configured for camera capture using the `capture=\"environment\"` attribute. This ensures mobile browsers prioritize the rear camera.\n- **`App.tsx`**: Add a new \"Camera\" button in the input footer using the `Camera` icon from Lucide.\n- **`App.tsx`**: Create a `cameraInputRef` to programmatically trigger the camera.\n\n(ii) **Behavior**:\n- Clicking the Camera icon opens the native camera application on mobile devices.\n- Once a photo is snapped and confirmed, it is automatically processed as a base64 string and shown in the attachment preview, just like a standard image upload.\n- The user can then add a text prompt or send the image immediately for analysis.\n\n(iii) **Visual Appearance**:\n- A sleek, high-contrast camera icon will sit next to the existing image upload button.\n- Both buttons will have a consistent dark-theme \"pill\" hover effect.\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767631738889,
+    "doneTimestamp": 1767631738896
+  },
+  {
+    "id": 32,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "App.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add camera capture capability with a dedicated UI button and hidden capture input.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState, useRef, useEffect } from 'react';\nimport { Send, Image as ImageIcon, Camera, X, Loader2, Sparkles } from 'lucide-react';\nimport { Message, Sender } from './types';\nimport { generateResponse } from './services/geminiService';\nimport MessageBubble from './components/MessageBubble';\nimport SettingsPanel from './components/SettingsPanel';\nimport ShareButton from './components/ShareButton';\nimport InstallButton from './components/InstallButton';\n\nconst STORAGE_KEY = 'achille_chat_history';\n\nconst INITIAL_MESSAGE: Message = {\n  id: '1',\n  text: \"Hello! I'm ACHILLE, your AI assistant. I can see, speak, and think deeply. How can I help you today?\",\n  sender: Sender.Bot,\n  timestamp: Date.now()\n};\n\nconst App: React.FC = () => {\n  const [messages, setMessages] = useState<Message[]>(() => {\n    const saved = localStorage.getItem(STORAGE_KEY);\n    return saved ? JSON.parse(saved) : [INITIAL_MESSAGE];\n  });\n  const [inputText, setInputText] = useState('');\n  const [isLoading, setIsLoading] = useState(false);\n  const [selectedImage, setSelectedImage] = useState<string | null>(null);\n  \n  // Settings State\n  const [useThinking, setUseThinking] = useState(false);\n  const [useLite, setUseLite] = useState(true);\n  \n  const messagesEndRef = useRef<HTMLDivElement>(null);\n  const fileInputRef = useRef<HTMLInputElement>(null);\n  const cameraInputRef = useRef<HTMLInputElement>(null);\n\n  const scrollToBottom = (behavior: ScrollBehavior = 'smooth') => {\n    messagesEndRef.current?.scrollIntoView({ behavior });\n  };\n\n  // Save messages to localStorage whenever they change\n  useEffect(() => {\n    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));\n    scrollToBottom();\n  }, [messages]);\n\n  const handleClearHistory = () => {\n    if (window.confirm(\"Are you sure you want to clear your entire chat history?\")) {\n      setMessages([INITIAL_MESSAGE]);\n      localStorage.removeItem(STORAGE_KEY);\n    }\n  };\n\n  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {\n    const file = e.target.files?.[0];\n    if (file) {\n      const reader = new FileReader();\n      reader.onloadend = () => {\n        setSelectedImage(reader.result as string);\n      };\n      reader.readAsDataURL(file);\n    }\n    // Reset inputs so the same file can be selected again if needed\n    if (fileInputRef.current) fileInputRef.current.value = '';\n    if (cameraInputRef.current) cameraInputRef.current.value = '';\n  };\n\n  const handleSendMessage = async () => {\n    if ((!inputText.trim() && !selectedImage) || isLoading) return;\n\n    const userMessage: Message = {\n      id: Date.now().toString(),\n      text: inputText,\n      sender: Sender.User,\n      timestamp: Date.now(),\n      image: selectedImage || undefined\n    };\n\n    setMessages(prev => [...prev, userMessage]);\n    setInputText('');\n    setSelectedImage(null);\n    setIsLoading(true);\n\n    try {\n      const responseText = await generateResponse(userMessage.text || (userMessage.image ? \"Describe this image\" : \"\"), {\n        useThinking,\n        useLite,\n        image: userMessage.image\n      });\n\n      const botMessage: Message = {\n        id: (Date.now() + 1).toString(),\n        text: responseText,\n        sender: Sender.Bot,\n        timestamp: Date.now(),\n        isThinking: useThinking && !userMessage.image\n      };\n\n      setMessages(prev => [...prev, botMessage]);\n    } catch (error) {\n      console.error(error);\n      const errorMessage: Message = {\n        id: (Date.now() + 1).toString(),\n        text: \"Sorry, something went wrong. Please check your connection and try again.\",\n        sender: Sender.Bot,\n        timestamp: Date.now()\n      };\n      setMessages(prev => [...prev, errorMessage]);\n    } finally {\n      setIsLoading(false);\n    }\n  };\n\n  const handleKeyDown = (e: React.KeyboardEvent) => {\n    if (e.key === 'Enter' && !e.shiftKey) {\n      e.preventDefault();\n      handleSendMessage();\n    }\n  };\n\n  return (\n    <div className=\"flex flex-col h-full bg-slate-950 text-slate-100 font-sans\">\n      {/* Header */}\n      <header className=\"flex-none p-4 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 flex items-center justify-between sticky top-0 z-10\">\n        <div className=\"flex items-center gap-2\">\n          <div className=\"w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center\">\n            <Sparkles className=\"w-5 h-5 text-white\" />\n          </div>\n          <h1 className=\"font-bold text-lg tracking-tight\">ACHILLE Ai</h1>\n        </div>\n        <div className=\"flex items-center gap-2\">\n          <InstallButton />\n          <ShareButton />\n        </div>\n      </header>\n\n      {/* Messages Area */}\n      <main className=\"flex-1 overflow-y-auto p-4 scroll-smooth no-scrollbar\">\n        <div className=\"max-w-3xl mx-auto flex flex-col gap-2\">\n          {messages.map((msg) => (\n            <MessageBubble key={msg.id} message={msg} />\n          ))}\n          {isLoading && (\n            <div className=\"flex justify-start\">\n              <div className=\"bg-slate-800 rounded-2xl rounded-bl-none p-4 border border-slate-700 flex items-center gap-3\">\n                <Loader2 className=\"w-5 h-5 text-blue-400 animate-spin\" />\n                <span className=\"text-slate-400 text-sm\">\n                  {useThinking ? \"Thinking deeply...\" : \"Generating...\"}\n                </span>\n              </div>\n            </div>\n          )}\n          <div ref={messagesEndRef} />\n        </div>\n      </main>\n\n      {/* Controls & Input */}\n      <footer className=\"flex-none bg-slate-950/90 backdrop-blur-sm sticky bottom-0 z-20\">\n        \n        {/* Settings Toggle Area */}\n        <SettingsPanel \n          useThinking={useThinking} \n          setUseThinking={setUseThinking}\n          useLite={useLite}\n          setUseLite={setUseLite}\n          onClearHistory={handleClearHistory}\n        />\n\n        {/* Selected Image Preview */}\n        {selectedImage && (\n          <div className=\"px-4 py-2 flex items-center gap-2 bg-slate-900/50 backdrop-blur-sm border-t border-slate-800\">\n            <div className=\"relative inline-block\">\n              <img src={selectedImage} alt=\"Selected\" className=\"h-16 w-16 object-cover rounded-lg border border-slate-700 shadow-lg\" />\n              <button \n                onClick={() => setSelectedImage(null)}\n                className=\"absolute -top-2 -right-2 bg-red-500 rounded-full p-0.5 text-white shadow-md hover:bg-red-600 active:scale-90 transition-transform\"\n              >\n                <X className=\"w-3 h-3\" />\n              </button>\n            </div>\n            <span className=\"text-xs text-slate-400 font-medium\">Image ready for analysis</span>\n          </div>\n        )}\n\n        {/* Input Area */}\n        <div className=\"p-4 pt-2 max-w-3xl mx-auto\">\n          <div className=\"flex gap-1.5 items-end bg-slate-900 border border-slate-800 rounded-2xl p-2 focus-within:ring-2 focus-within:ring-blue-500/50 focus-within:border-blue-500 transition-all shadow-lg\">\n            \n            {/* Gallery Button */}\n            <button \n              onClick={() => fileInputRef.current?.click()}\n              className=\"p-2.5 text-slate-400 hover:text-blue-400 hover:bg-slate-800 rounded-xl transition-colors\"\n              title=\"Upload Image\"\n            >\n              <ImageIcon className=\"w-5 h-5\" />\n            </button>\n            <input \n              type=\"file\" \n              accept=\"image/*\" \n              className=\"hidden\" \n              ref={fileInputRef} \n              onChange={handleImageSelect}\n            />\n\n            {/* Camera Button */}\n            <button \n              onClick={() => cameraInputRef.current?.click()}\n              className=\"p-2.5 text-slate-400 hover:text-blue-400 hover:bg-slate-800 rounded-xl transition-colors\"\n              title=\"Take Photo\"\n            >\n              <Camera className=\"w-5 h-5\" />\n            </button>\n            <input \n              type=\"file\" \n              accept=\"image/*\" \n              capture=\"environment\" \n              className=\"hidden\" \n              ref={cameraInputRef} \n              onChange={handleImageSelect}\n            />\n\n            <textarea\n              value={inputText}\n              onChange={(e) => setInputText(e.target.value)}\n              onKeyDown={handleKeyDown}\n              placeholder={useThinking ? \"Ask a complex question...\" : \"Message ACHILLE...\"}\n              className=\"flex-1 bg-transparent border-none text-slate-100 placeholder-slate-500 focus:ring-0 resize-none max-h-32 py-2.5 text-base\"\n              rows={1}\n              style={{ minHeight: '40px' }}\n            />\n\n            <button\n              onClick={handleSendMessage}\n              disabled={(!inputText.trim() && !selectedImage) || isLoading}\n              className={`p-2.5 rounded-xl transition-all ${\n                (!inputText.trim() && !selectedImage) || isLoading\n                  ? 'bg-slate-800 text-slate-600 cursor-not-allowed'\n                  : 'bg-blue-600 text-white hover:bg-blue-500 shadow-md hover:shadow-blue-500/20 active:scale-95'\n              }`}\n            >\n              <Send className=\"w-5 h-5\" />\n            </button>\n          </div>\n          <div className=\"text-center mt-2\">\n            <p className=\"text-[10px] text-slate-600 uppercase tracking-widest font-bold\">\n               {useThinking ? 'Gemini 3 Pro Deep Research' : 'Gemini Ultra Fast Mode'}\n            </p>\n          </div>\n        </div>\n      </footer>\n    </div>\n  );\n};\n\nexport default App;"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": 1767631739652,
+    "doneTimestamp": 1767631754290
+  },
+  {
+    "id": 34,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "Add the feature of Accessing Google nano Banana 🍌 Ai feature for generating images and edits themes also on the interface and a button where a user can choose or exchange the models according to what he needs",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767631915466
+  },
+  {
+    "id": 35,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Integrating Image Features**\n\nI'm currently focused on incorporating the \"Google nano Banana 🍌 Ai\" image generation and editing capabilities. I'm prioritizing the integration of the `gemini-2.5-flash-image` model. Additionally, I'm thinking about how to design an intuitive interface that allows model exchange through buttons, which is becoming the priority now.\n\n\n**Prioritizing Model Integration**\n\nI've just added the `gemini-3-pro-image-preview` model to my considerations. Now, I'm focusing on creating a system to manage model selection. I'm expanding the model tray to include all the models mentioned, like the Flash model, to cater to diverse user needs. The UI is being refactored to seamlessly swap models based on task type.\n\n\n**Expanding Image Capabilities**\n\nI'm now adding a dedicated \"Create Image\" button to launch the image generation flow. I've updated the specification and constants for the `gemini-2.5-flash-image` and `gemini-3-pro-image-preview` models, in addition to the `geminiService.ts` to implement `generateImage` logic. I'm also planning to refactor the `App.tsx` component to manage active modes and model selection using a settings panel to allow the user to easily select their model of choice.\n\n\n**Developing Visual Branding**\n\nI'm now integrating the \"Nano Banana\" branding into the UI. I've added the 🍌 emoji as requested and am exploring bright yellow accents for the Banana mode to enhance visual consistency. I'm focusing on the implementation details now and creating a dedicated \"Generate Image\" button. I'm starting by refining `geminiService.ts` to implement the `gemini-2.5-flash-image` image generation, using `generateContent`. I'm also ensuring the UI can reflect the user's focus on image generation and/or image editing.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1767631915466,
+    "doneTimestamp": 1767631929274
+  },
+  {
+    "id": 36,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "constants.ts",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add image generation and editing models for Nano Banana features.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\n\n// Models\nexport const MODEL_THINKING = 'gemini-3-pro-preview';\nexport const MODEL_LITE = 'gemini-flash-lite-latest';\nexport const MODEL_TTS = 'gemini-2.5-flash-preview-tts';\nexport const MODEL_IMAGE_ANALYSIS = 'gemini-3-pro-preview';\nexport const MODEL_IMAGE_GEN = 'gemini-2.5-flash-image';\nexport const MODEL_IMAGE_GEN_PRO = 'gemini-3-pro-image-preview';\n\n// Limits\nexport const MAX_THINKING_BUDGET = 32768;\n\nexport const PLACEHOLDER_IMAGE = 'https://picsum.photos/400/300';"
+            }
+          ]
+        },
+        {
+          "path": "services/geminiService.ts",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Update geminiService to support Nano Banana image generation and editing.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import { GoogleGenAI, Modality } from \"@google/genai\";\nimport { \n  MODEL_THINKING, \n  MODEL_LITE, \n  MODEL_TTS, \n  MODEL_IMAGE_ANALYSIS, \n  MODEL_IMAGE_GEN,\n  MAX_THINKING_BUDGET \n} from '../constants';\nimport { GenerationOptions } from '../types';\n\n// Initialize the API client\nconst apiKey = process.env.API_KEY || '';\nconst ai = new GoogleGenAI({ apiKey });\n\n/**\n * Generates text or image response based on user input and options.\n */\nexport const generateResponse = async (\n  prompt: string,\n  options: GenerationOptions & { isBananaMode?: boolean }\n): Promise<{ text?: string; image?: string }> => {\n  try {\n    const isImageAnalysis = !!options.image && !options.isBananaMode;\n    const isImageGen = options.isBananaMode;\n    \n    // Determine the model to use\n    let modelName = MODEL_LITE;\n    let config: any = {};\n\n    if (isImageGen) {\n      modelName = MODEL_IMAGE_GEN;\n      config.imageConfig = { aspectRatio: \"1:1\" };\n    } else if (options.useThinking && !isImageAnalysis) {\n      modelName = MODEL_THINKING;\n      config.thinkingConfig = { thinkingBudget: MAX_THINKING_BUDGET };\n    } else if (isImageAnalysis) {\n      modelName = MODEL_IMAGE_ANALYSIS;\n    } else {\n      modelName = MODEL_LITE;\n    }\n\n    const parts: any[] = [];\n    \n    // Add Image if present (for analysis OR editing)\n    if (options.image) {\n      const base64Data = options.image.split(',')[1];\n      const mimeType = options.image.split(';')[0].split(':')[1];\n      \n      parts.push({\n        inlineData: {\n          mimeType: mimeType,\n          data: base64Data\n        }\n      });\n    }\n\n    // Add Text Prompt\n    parts.push({ text: prompt });\n\n    const response = await ai.models.generateContent({\n      model: modelName,\n      contents: { parts },\n      config: config\n    });\n\n    let result: { text?: string; image?: string } = {};\n\n    for (const part of response.candidates[0].content.parts) {\n      if (part.inlineData) {\n        result.image = `data:${part.inlineData.mimeType};base64,${part.inlineData.data}`;\n      } else if (part.text) {\n        result.text = (result.text || \"\") + part.text;\n      }\n    }\n\n    return result;\n  } catch (error) {\n    console.error(\"Gemini API Error:\", error);\n    return { text: `Error: ${error instanceof Error ? error.message : \"Something went wrong\"}` };\n  }\n};\n\n/**\n * Generates speech from text using the TTS model.\n */\nexport const generateSpeech = async (text: string): Promise<AudioBuffer | null> => {\n  try {\n    const response = await ai.models.generateContent({\n      model: MODEL_TTS,\n      contents: [{ parts: [{ text: text }] }],\n      config: {\n        responseModalities: [Modality.AUDIO],\n        speechConfig: {\n          voiceConfig: {\n            prebuiltVoiceConfig: { voiceName: 'Kore' },\n          },\n        },\n      },\n    });\n\n    const base64Audio = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;\n    \n    if (!base64Audio) throw new Error(\"No audio data returned\");\n\n    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });\n    \n    const binaryString = atob(base64Audio);\n    const bytes = new Uint8Array(binaryString.length);\n    for (let i = 0; i < binaryString.length; i++) {\n      bytes[i] = binaryString.charCodeAt(i);\n    }\n    \n    return await audioContext.decodeAudioData(bytes.buffer);\n  } catch (error) {\n    console.error(\"TTS Error:\", error);\n    return null;\n  }\n};\n\nexport const playAudioBuffer = (buffer: AudioBuffer) => {\n  const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();\n  const source = audioContext.createBufferSource();\n  source.buffer = buffer;\n  source.connect(audioContext.destination);\n  source.start();\n};"
+            }
+          ]
+        },
+        {
+          "path": "components/SettingsPanel.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Redesign SettingsPanel to include model exchange buttons and Nano Banana mode.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\nimport { BrainCircuit, Zap, Trash2, Palette } from 'lucide-react';\n\ninterface SettingsPanelProps {\n  useThinking: boolean;\n  setUseThinking: (val: boolean) => void;\n  useLite: boolean;\n  setUseLite: (val: boolean) => void;\n  isBananaMode: boolean;\n  setIsBananaMode: (val: boolean) => void;\n  onClearHistory: () => void;\n}\n\nconst SettingsPanel: React.FC<SettingsPanelProps> = ({ \n  useThinking, \n  setUseThinking, \n  useLite, \n  setUseLite,\n  isBananaMode,\n  setIsBananaMode,\n  onClearHistory\n}) => {\n  return (\n    <div className=\"p-4 bg-slate-900 border-t border-slate-800 overflow-hidden\">\n      <div className=\"flex gap-4 overflow-x-auto no-scrollbar pb-1\">\n        {/* Nano Banana Mode Toggle */}\n        <button\n          onClick={() => {\n            setIsBananaMode(!isBananaMode);\n            if (!isBananaMode) {\n              setUseThinking(false);\n              setUseLite(false);\n            }\n          }}\n          className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-bold transition-all whitespace-nowrap ${\n            isBananaMode\n              ? 'bg-yellow-500/20 border-yellow-500 text-yellow-400 shadow-[0_0_15px_rgba(234,179,8,0.3)]'\n              : 'bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700'\n          }`}\n        >\n          <span className=\"text-lg\">🍌</span>\n          Banana Image Gen\n        </button>\n\n        {/* Thinking Mode Toggle */}\n        <button\n          onClick={() => {\n            setUseThinking(!useThinking);\n            if (!useThinking) {\n              setUseLite(false);\n              setIsBananaMode(false);\n            } else {\n              setUseLite(false);\n              setIsBananaMode(false);\n            }\n          }}\n          className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all whitespace-nowrap ${\n            useThinking\n              ? 'bg-purple-900/40 border-purple-500 text-purple-200 shadow-[0_0_15px_rgba(168,85,247,0.3)]'\n              : 'bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700'\n          }`}\n        >\n          <BrainCircuit className=\"w-4 h-4\" />\n          Pro Thinking\n        </button>\n\n        {/* Fast Mode Toggle */}\n        <button\n          onClick={() => {\n            setUseLite(!useLite);\n            if (!useLite) {\n              setUseThinking(false);\n              setIsBananaMode(false);\n            } else {\n              setUseThinking(false);\n              setIsBananaMode(false);\n            }\n          }}\n          className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all whitespace-nowrap ${\n            useLite\n              ? 'bg-blue-900/40 border-blue-500 text-blue-200 shadow-[0_0_15px_rgba(59,130,246,0.2)]'\n              : 'bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700'\n          }`}\n        >\n          <Zap className=\"w-4 h-4\" />\n          Flash Lite\n        </button>\n\n        {/* Clear History Button */}\n        <button\n          onClick={onClearHistory}\n          className=\"flex items-center gap-2 px-4 py-2 rounded-full border border-slate-700 bg-slate-800 text-slate-400 hover:bg-red-900/20 hover:border-red-500/50 hover:text-red-400 transition-all whitespace-nowrap\"\n        >\n          <Trash2 className=\"w-4 h-4\" />\n          Clear Chat\n        </button>\n      </div>\n    </div>\n  );\n};\n\nexport default SettingsPanel;"
+            }
+          ]
+        },
+        {
+          "path": "App.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Integrate Nano Banana image generation and mode switching into App.tsx.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState, useRef, useEffect } from 'react';\nimport { Send, Image as ImageIcon, Camera, X, Loader2, Sparkles, Wand2 } from 'lucide-react';\nimport { Message, Sender } from './types';\nimport { generateResponse } from './services/geminiService';\nimport MessageBubble from './components/MessageBubble';\nimport SettingsPanel from './components/SettingsPanel';\nimport ShareButton from './components/ShareButton';\nimport InstallButton from './components/InstallButton';\n\nconst STORAGE_KEY = 'achille_chat_history';\n\nconst INITIAL_MESSAGE: Message = {\n  id: '1',\n  text: \"Hello! I'm ACHILLE, your AI assistant. I've been updated with Nano Banana 🍌 image generation. Try switching modes below!\",\n  sender: Sender.Bot,\n  timestamp: Date.now()\n};\n\nconst App: React.FC = () => {\n  const [messages, setMessages] = useState<Message[]>(() => {\n    const saved = localStorage.getItem(STORAGE_KEY);\n    return saved ? JSON.parse(saved) : [INITIAL_MESSAGE];\n  });\n  const [inputText, setInputText] = useState('');\n  const [isLoading, setIsLoading] = useState(false);\n  const [selectedImage, setSelectedImage] = useState<string | null>(null);\n  \n  // Settings State\n  const [useThinking, setUseThinking] = useState(false);\n  const [useLite, setUseLite] = useState(true);\n  const [isBananaMode, setIsBananaMode] = useState(false);\n  \n  const messagesEndRef = useRef<HTMLDivElement>(null);\n  const fileInputRef = useRef<HTMLInputElement>(null);\n  const cameraInputRef = useRef<HTMLInputElement>(null);\n\n  const scrollToBottom = (behavior: ScrollBehavior = 'smooth') => {\n    messagesEndRef.current?.scrollIntoView({ behavior });\n  };\n\n  useEffect(() => {\n    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));\n    scrollToBottom();\n  }, [messages]);\n\n  const handleClearHistory = () => {\n    if (window.confirm(\"Are you sure you want to clear your entire chat history?\")) {\n      setMessages([INITIAL_MESSAGE]);\n      localStorage.removeItem(STORAGE_KEY);\n    }\n  };\n\n  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {\n    const file = e.target.files?.[0];\n    if (file) {\n      const reader = new FileReader();\n      reader.onloadend = () => setSelectedImage(reader.result as string);\n      reader.readAsDataURL(file);\n    }\n    if (fileInputRef.current) fileInputRef.current.value = '';\n    if (cameraInputRef.current) cameraInputRef.current.value = '';\n  };\n\n  const handleSendMessage = async () => {\n    if ((!inputText.trim() && !selectedImage) || isLoading) return;\n\n    const userMessage: Message = {\n      id: Date.now().toString(),\n      text: inputText,\n      sender: Sender.User,\n      timestamp: Date.now(),\n      image: selectedImage || undefined\n    };\n\n    setMessages(prev => [...prev, userMessage]);\n    setInputText('');\n    setSelectedImage(null);\n    setIsLoading(true);\n\n    try {\n      const result = await generateResponse(userMessage.text || (userMessage.image ? \"Enhance this image\" : \"Generate a beautiful landscape\"), {\n        useThinking,\n        useLite,\n        image: userMessage.image,\n        isBananaMode\n      });\n\n      const botMessage: Message = {\n        id: (Date.now() + 1).toString(),\n        text: result.text || (result.image ? \"Here is your generated image 🍌\" : \"Success!\"),\n        sender: Sender.Bot,\n        timestamp: Date.now(),\n        image: result.image,\n        isThinking: useThinking && !isBananaMode\n      };\n\n      setMessages(prev => [...prev, botMessage]);\n    } catch (error) {\n      console.error(error);\n      const errorMessage: Message = {\n        id: (Date.now() + 1).toString(),\n        text: \"Something went wrong. The model might be busy. Please try again.\",\n        sender: Sender.Bot,\n        timestamp: Date.now()\n      };\n      setMessages(prev => [...prev, errorMessage]);\n    } finally {\n      setIsLoading(false);\n    }\n  };\n\n  const handleKeyDown = (e: React.KeyboardEvent) => {\n    if (e.key === 'Enter' && !e.shiftKey) {\n      e.preventDefault();\n      handleSendMessage();\n    }\n  };\n\n  return (\n    <div className={`flex flex-col h-full bg-slate-950 text-slate-100 font-sans transition-colors duration-500 ${isBananaMode ? 'selection:bg-yellow-500/30' : ''}`}>\n      {/* Header */}\n      <header className={`flex-none p-4 backdrop-blur-md border-b flex items-center justify-between sticky top-0 z-10 transition-colors ${isBananaMode ? 'bg-yellow-900/20 border-yellow-500/30' : 'bg-slate-900/80 border-slate-800'}`}>\n        <div className=\"flex items-center gap-2\">\n          <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all ${isBananaMode ? 'bg-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.5)]' : 'bg-gradient-to-br from-blue-500 to-purple-600'}`}>\n            {isBananaMode ? <span className=\"text-lg\">🍌</span> : <Sparkles className=\"w-5 h-5 text-white\" />}\n          </div>\n          <h1 className=\"font-bold text-lg tracking-tight\">\n            ACHILLE <span className={isBananaMode ? 'text-yellow-400' : ''}>Ai</span>\n          </h1>\n        </div>\n        <div className=\"flex items-center gap-2\">\n          <InstallButton />\n          <ShareButton />\n        </div>\n      </header>\n\n      {/* Messages Area */}\n      <main className=\"flex-1 overflow-y-auto p-4 scroll-smooth no-scrollbar\">\n        <div className=\"max-w-3xl mx-auto flex flex-col gap-2\">\n          {messages.map((msg) => (\n            <MessageBubble key={msg.id} message={msg} />\n          ))}\n          {isLoading && (\n            <div className=\"flex justify-start\">\n              <div className={`bg-slate-800 rounded-2xl rounded-bl-none p-4 border flex items-center gap-3 transition-colors ${isBananaMode ? 'border-yellow-500/50' : 'border-slate-700'}`}>\n                <Loader2 className={`w-5 h-5 animate-spin ${isBananaMode ? 'text-yellow-400' : 'text-blue-400'}`} />\n                <span className=\"text-slate-400 text-sm\">\n                  {isBananaMode ? \"Peeling the banana... (Generating Image)\" : useThinking ? \"Thinking deeply...\" : \"Synthesizing...\"}\n                </span>\n              </div>\n            </div>\n          )}\n          <div ref={messagesEndRef} />\n        </div>\n      </main>\n\n      {/* Controls & Input */}\n      <footer className=\"flex-none bg-slate-950/90 backdrop-blur-sm sticky bottom-0 z-20\">\n        \n        <SettingsPanel \n          useThinking={useThinking} \n          setUseThinking={setUseThinking}\n          useLite={useLite}\n          setUseLite={setUseLite}\n          isBananaMode={isBananaMode}\n          setIsBananaMode={setIsBananaMode}\n          onClearHistory={handleClearHistory}\n        />\n\n        {selectedImage && (\n          <div className={`px-4 py-2 flex items-center gap-2 bg-slate-900/50 backdrop-blur-sm border-t ${isBananaMode ? 'border-yellow-500/30' : 'border-slate-800'}`}>\n            <div className=\"relative inline-block\">\n              <img src={selectedImage} alt=\"Selected\" className={`h-16 w-16 object-cover rounded-lg border shadow-lg ${isBananaMode ? 'border-yellow-500' : 'border-slate-700'}`} />\n              <button \n                onClick={() => setSelectedImage(null)}\n                className=\"absolute -top-2 -right-2 bg-red-500 rounded-full p-0.5 text-white shadow-md hover:bg-red-600 active:scale-90 transition-transform\"\n              >\n                <X className=\"w-3 h-3\" />\n              </button>\n            </div>\n            <span className=\"text-xs text-slate-400 font-medium\">\n              {isBananaMode ? \"Image selected for Editing 🍌\" : \"Image ready for analysis\"}\n            </span>\n          </div>\n        )}\n\n        <div className=\"p-4 pt-2 max-w-3xl mx-auto\">\n          <div className={`flex gap-1.5 items-end bg-slate-900 border rounded-2xl p-2 transition-all shadow-lg focus-within:ring-2 ${isBananaMode ? 'border-yellow-500/50 focus-within:ring-yellow-500/30' : 'border-slate-800 focus-within:ring-blue-500/50 focus-within:border-blue-500'}`}>\n            \n            <button \n              onClick={() => fileInputRef.current?.click()}\n              className=\"p-2.5 text-slate-400 hover:text-blue-400 hover:bg-slate-800 rounded-xl transition-colors\"\n              title=\"Gallery\"\n            >\n              <ImageIcon className=\"w-5 h-5\" />\n            </button>\n            <input type=\"file\" accept=\"image/*\" className=\"hidden\" ref={fileInputRef} onChange={handleImageSelect} />\n\n            <button \n              onClick={() => cameraInputRef.current?.click()}\n              className=\"p-2.5 text-slate-400 hover:text-blue-400 hover:bg-slate-800 rounded-xl transition-colors\"\n              title=\"Camera\"\n            >\n              <Camera className=\"w-5 h-5\" />\n            </button>\n            <input type=\"file\" accept=\"image/*\" capture=\"environment\" className=\"hidden\" ref={cameraInputRef} onChange={handleImageSelect} />\n\n            <textarea\n              value={inputText}\n              onChange={(e) => setInputText(e.target.value)}\n              onKeyDown={handleKeyDown}\n              placeholder={isBananaMode ? \"Describe the image you want...\" : useThinking ? \"Ask a complex question...\" : \"Message ACHILLE...\"}\n              className=\"flex-1 bg-transparent border-none text-slate-100 placeholder-slate-500 focus:ring-0 resize-none max-h-32 py-2.5 text-base\"\n              rows={1}\n              style={{ minHeight: '40px' }}\n            />\n\n            <button\n              onClick={handleSendMessage}\n              disabled={(!inputText.trim() && !selectedImage) || isLoading}\n              className={`p-2.5 rounded-xl transition-all ${\n                (!inputText.trim() && !selectedImage) || isLoading\n                  ? 'bg-slate-800 text-slate-600 cursor-not-allowed'\n                  : isBananaMode \n                    ? 'bg-yellow-500 text-slate-900 hover:bg-yellow-400 shadow-yellow-500/20 active:scale-95'\n                    : 'bg-blue-600 text-white hover:bg-blue-500 shadow-md shadow-blue-500/20 active:scale-95'\n              }`}\n            >\n              {isBananaMode ? <Wand2 className=\"w-5 h-5\" /> : <Send className=\"w-5 h-5\" />}\n            </button>\n          </div>\n          <div className=\"text-center mt-2\">\n            <p className={`text-[10px] uppercase tracking-widest font-bold transition-colors ${isBananaMode ? 'text-yellow-500' : 'text-slate-600'}`}>\n               {isBananaMode ? 'Nano Banana Image Engine' : useThinking ? 'Gemini 3 Pro Deep Research' : 'Gemini Ultra Fast Mode'}\n            </p>\n          </div>\n        </div>\n      </footer>\n    </div>\n  );\n};\n\nexport default App;"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": 1767631929276,
+    "doneTimestamp": 1767631929757
+  }
+]

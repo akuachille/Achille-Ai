@@ -19,7 +19,7 @@ const ai = new GoogleGenAI({ apiKey });
 export const generateResponse = async (
   prompt: string,
   options: GenerationOptions & { isBananaMode?: boolean }
-): Promise<{ text?: string; image?: string }> => {
+): Promise<{ text?: string; image?: string; sources?: { title: string; url: string }[] }> => {
   try {
     const isImageAnalysis = !!options.image && !options.isBananaMode;
     const isImageGen = options.isBananaMode;
@@ -58,19 +58,42 @@ export const generateResponse = async (
     // Add Text Prompt
     parts.push({ text: prompt });
 
+    const tools: any[] = [];
+    if (options.useSearch) tools.push({ googleSearch: {} });
+    if (options.useCode) tools.push({ codeExecution: {} });
+
     const response = await ai.models.generateContent({
       model: modelName,
       contents: { parts },
-      config: config
+      config: {
+        ...config,
+        tools: tools.length > 0 ? tools : undefined,
+        toolConfig: tools.length > 0 ? { includeServerSideToolInvocations: true } : undefined
+      }
     });
 
-    let result: { text?: string; image?: string } = {};
+    let result: { text?: string; image?: string; sources?: { title: string; url: string }[] } = {};
 
-    for (const part of response.candidates[0].content.parts) {
-      if (part.inlineData) {
-        result.image = `data:${part.inlineData.mimeType};base64,${part.inlineData.data}`;
-      } else if (part.text) {
-        result.text = (result.text || "") + part.text;
+    // Extract Grounding Sources (Google Search)
+    const chunks = response.candidates?.[0]?.groundingMetadata?.groundingChunks;
+    if (chunks) {
+      result.sources = chunks
+        .map((chunk: any) => chunk.web ? { title: chunk.web.title, url: chunk.web.uri } : null)
+        .filter(Boolean);
+    }
+
+    for (const candidate of response.candidates) {
+      if (!candidate.content?.parts) continue;
+      for (const part of candidate.content.parts) {
+        if (part.inlineData) {
+          result.image = `data:${part.inlineData.mimeType};base64,${part.inlineData.data}`;
+        } else if (part.text) {
+          result.text = (result.text || "") + part.text;
+        } else if (part.executableCode) {
+          result.text = (result.text || "") + `\n\n\`\`\`${part.executableCode.language}\n${part.executableCode.code}\n\`\`\``;
+        } else if (part.codeExecutionResult) {
+          result.text = (result.text || "") + `\n\n**Output:**\n\`\`\`\n${part.codeExecutionResult.output}\n\`\`\``;
+        }
       }
     }
 

@@ -29,6 +29,8 @@ const App: React.FC = () => {
   const [useThinking, setUseThinking] = useState(false);
   const [useLite, setUseLite] = useState(true);
   const [isBananaMode, setIsBananaMode] = useState(false);
+  const [useSearch, setUseSearch] = useState(false);
+  const [useCode, setUseCode] = useState(false);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -81,6 +83,8 @@ const App: React.FC = () => {
       const result = await generateResponse(userMessage.text || (userMessage.image ? "Enhance this image" : "Generate a beautiful landscape"), {
         useThinking,
         useLite,
+        useSearch,
+        useCode,
         image: userMessage.image,
         isBananaMode
       });
@@ -91,6 +95,7 @@ const App: React.FC = () => {
         sender: Sender.Bot,
         timestamp: Date.now(),
         image: result.image,
+        sources: result.sources,
         isThinking: useThinking && !isBananaMode
       };
 
@@ -162,6 +167,10 @@ const App: React.FC = () => {
           setUseThinking={setUseThinking}
           useLite={useLite}
           setUseLite={setUseLite}
+          useSearch={useSearch}
+          setUseSearch={setUseSearch}
+          useCode={useCode}
+          setUseCode={setUseCode}
           isBananaMode={isBananaMode}
           setIsBananaMode={setIsBananaMode}
           onClearHistory={handleClearHistory}
@@ -209,7 +218,7 @@ const App: React.FC = () => {
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder={isBananaMode ? "Describe the image you want..." : useThinking ? "Ask a complex question..." : "Message ACHILLE..."}
+              placeholder={isBananaMode ? "Describe the image you want..." : useThinking ? "Ask a complex question..." : useSearch ? "Search the web for..." : useCode ? "Let's write and run some code..." : "Message ACHILLE..."}
               className="flex-1 bg-transparent border-none text-slate-100 placeholder-slate-500 focus:ring-0 resize-none max-h-32 py-2.5 text-base"
               rows={1}
               style={{ minHeight: '40px' }}
@@ -231,7 +240,7 @@ const App: React.FC = () => {
           </div>
           <div className="text-center mt-2">
             <p className={`text-[10px] uppercase tracking-widest font-bold transition-colors ${isBananaMode ? 'text-yellow-500' : 'text-slate-600'}`}>
-               {isBananaMode ? 'Nano Banana Image Engine' : useThinking ? 'Gemini 3 Pro Deep Research' : 'Gemini Ultra Fast Mode'}
+               {isBananaMode ? 'Nano Banana Image Engine' : useThinking ? 'Gemini 3 Pro Deep Research' : (useSearch || useCode) ? 'Tools Enabled: ' + [useSearch && 'Search', useCode && 'Code'].filter(Boolean).join(' + ') : 'Gemini Ultra Fast Mode'}
             </p>
           </div>
         </div>
