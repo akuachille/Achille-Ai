@@ -9,9 +9,32 @@ import {
 } from '../constants';
 import { GenerationOptions } from '../types';
 
-// Initialize the API client
-const apiKey = process.env.API_KEY || '';
-const ai = new GoogleGenAI({ apiKey });
+// Helper to get the API client dynamically (lazy loading)
+export const getApiKey = (): string => {
+  return (
+    process.env.GEMINI_API_KEY ||
+    process.env.API_KEY ||
+    localStorage.getItem('achille_custom_api_key') ||
+    ''
+  );
+};
+
+export const getAIClient = (): GoogleGenAI => {
+  const key = getApiKey();
+  if (!key) {
+    throw new Error(
+      "API key is missing. Please provide a valid Gemini API Key. You can set GEMINI_API_KEY in your Netlify Environment Variables or paste a custom key in the settings panel."
+    );
+  }
+  return new GoogleGenAI({
+    apiKey: key,
+    httpOptions: {
+      headers: {
+        'User-Agent': 'aistudio-build'
+      }
+    }
+  });
+};
 
 /**
  * Generates text or image response based on user input and options.
@@ -62,7 +85,8 @@ export const generateResponse = async (
     if (options.useSearch) tools.push({ googleSearch: {} });
     if (options.useCode) tools.push({ codeExecution: {} });
 
-    const response = await ai.models.generateContent({
+    const aiClient = getAIClient();
+    const response = await aiClient.models.generateContent({
       model: modelName,
       contents: { parts },
       config: {
@@ -109,7 +133,8 @@ export const generateResponse = async (
  */
 export const generateSpeech = async (text: string): Promise<AudioBuffer | null> => {
   try {
-    const response = await ai.models.generateContent({
+    const aiClient = getAIClient();
+    const response = await aiClient.models.generateContent({
       model: MODEL_TTS,
       contents: [{ parts: [{ text: text }] }],
       config: {

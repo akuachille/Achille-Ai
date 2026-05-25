@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrainCircuit, Zap, Trash2, Search, Code } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { BrainCircuit, Zap, Trash2, Search, Code, Key, Check, Info } from 'lucide-react';
 
 interface SettingsPanelProps {
   useThinking: boolean;
@@ -28,6 +28,28 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   setUseCode,
   onClearHistory
 }) => {
+  const [showKeyInput, setShowKeyInput] = useState(false);
+  const [keyVal, setKeyVal] = useState('');
+  const [isSaved, setIsSaved] = useState(false);
+
+  useEffect(() => {
+    const savedKey = localStorage.getItem('achille_custom_api_key') || '';
+    setKeyVal(savedKey);
+  }, []);
+
+  const handleKeyChange = (val: string) => {
+    const trimmed = val.trim();
+    setKeyVal(trimmed);
+    if (trimmed) {
+      localStorage.setItem('achille_custom_api_key', trimmed);
+    } else {
+      localStorage.removeItem('achille_custom_api_key');
+    }
+    setIsSaved(true);
+    const timer = setTimeout(() => setIsSaved(false), 2000);
+    return () => clearTimeout(timer);
+  };
+
   return (
     <div className="p-4 bg-slate-900 border-t border-slate-800 overflow-hidden">
       <div className="flex gap-3 overflow-x-auto no-scrollbar pb-1">
@@ -132,6 +154,19 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
           Lite
         </button>
 
+        {/* Custom API Key Configuration Toggle */}
+        <button
+          onClick={() => setShowKeyInput(!showKeyInput)}
+          className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all whitespace-nowrap ${
+            showKeyInput || keyVal
+              ? 'bg-indigo-900/40 border-indigo-500 text-indigo-300 shadow-[0_0_15px_rgba(99,102,241,0.2)]'
+              : 'bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700'
+          }`}
+        >
+          <Key className="w-4 h-4" />
+          {keyVal ? 'API Key Set' : 'API Key (Netlify)'}
+        </button>
+
         {/* Clear History Button */}
         <button
           onClick={onClearHistory}
@@ -141,6 +176,43 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
           Clear Chat
         </button>
       </div>
+
+      {showKeyInput && (
+        <div id="api-key-config" className="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-800 text-xs">
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center justify-between">
+              <label htmlFor="custom-key-input" className="font-semibold text-slate-300 flex items-center gap-1.5">
+                <Key className="w-3.5 h-3.5 text-indigo-400" />
+                Custom Gemini API Key
+              </label>
+              <span className="text-[10px] text-slate-500">Stored locally in your browser</span>
+            </div>
+            
+            <div className="flex gap-2 items-center">
+              <input
+                id="custom-key-input"
+                type="password"
+                placeholder={keyVal ? "••••••••••••••••••••••••••••" : "Paste your Gemini API Key (AIzaSy...)"}
+                value={keyVal}
+                onChange={(e) => handleKeyChange(e.target.value)}
+                className="flex-1 bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 text-xs text-security"
+              />
+              {isSaved && (
+                <span className="flex items-center gap-1 text-emerald-400 text-[10px] font-bold px-2 py-1.5 bg-emerald-950/40 border border-emerald-500/30 rounded-lg">
+                  <Check className="w-3 h-3" /> Saved
+                </span>
+              )}
+            </div>
+            
+            <div className="text-slate-400 leading-relaxed mt-1 flex items-start gap-1.5">
+              <Info className="w-3.5 h-3.5 text-indigo-400 flex-shrink-0 mt-0.5" />
+              <span>
+                By default, the server uses your Netlify <strong>GEMINI_API_KEY</strong> environment variable compiled during the build. If it's empty, you can paste an API key above. Under your Netlify site dashboard (<strong>Site configuration &gt; Environment variables</strong>), add <code>GEMINI_API_KEY</code> and trigger a new deploy to make it permanent for everyone automatically!
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
