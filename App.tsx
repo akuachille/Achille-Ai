@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Image as ImageIcon, Camera, X, Loader2, Sparkles, Wand2 } from 'lucide-react';
+import { Send, Image as ImageIcon, Camera, X, Loader2, Sparkles, Wand2, Key, Check, Info, ExternalLink } from 'lucide-react';
 import { Message, Sender } from './types';
-import { generateResponse } from './services/geminiService';
+import { generateResponse, getApiKey } from './services/geminiService';
 import MessageBubble from './components/MessageBubble';
 import SettingsPanel from './components/SettingsPanel';
 import ShareButton from './components/ShareButton';
@@ -31,6 +31,30 @@ const App: React.FC = () => {
   const [isBananaMode, setIsBananaMode] = useState(false);
   const [useSearch, setUseSearch] = useState(false);
   const [useCode, setUseCode] = useState(false);
+  
+  const [hasApiKey, setHasApiKey] = useState(() => !!getApiKey());
+  const [tempKey, setTempKey] = useState('');
+
+  const handleSaveTempKey = () => {
+    const trimmed = tempKey.trim();
+    if (trimmed) {
+      localStorage.setItem('achille_custom_api_key', trimmed);
+      setHasApiKey(true);
+      setTempKey('');
+    }
+  };
+
+  useEffect(() => {
+    const checkKey = () => {
+      setHasApiKey(!!getApiKey());
+    };
+    window.addEventListener('storage', checkKey);
+    const interval = setInterval(checkKey, 500);
+    return () => {
+      window.removeEventListener('storage', checkKey);
+      clearInterval(interval);
+    };
+  }, []);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -142,6 +166,56 @@ const App: React.FC = () => {
       {/* Messages Area */}
       <main className="flex-1 overflow-y-auto p-4 scroll-smooth no-scrollbar">
         <div className="max-w-3xl mx-auto flex flex-col gap-2">
+          {/* API Key Banner Indicator */}
+          {!hasApiKey && (
+            <div className="bg-gradient-to-r from-red-950/40 to-indigo-950/40 border border-red-500/30 rounded-2xl p-5 mb-4 shadow-xl backdrop-blur-md">
+              <div className="flex flex-col md:flex-row items-start gap-4">
+                <div className="p-3 bg-red-400/10 rounded-xl border border-red-500/30 text-red-400 flex-shrink-0 animate-pulse">
+                  <Key className="w-6 h-6" />
+                </div>
+                <div className="flex-1 space-y-3">
+                  <h3 className="font-bold text-slate-200 text-base flex items-center gap-2">
+                    Gemini API Key Needed
+                  </h3>
+                  <p className="text-sm text-slate-400 leading-relaxed">
+                    ACHILLE requires a Gemini API key to operate on Netlify. Add one temporarily below, or configure it on Netlify to make it permanent for everyone!
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-2 max-w-xl">
+                    <input
+                      type="password"
+                      placeholder="Paste your Gemini API Key here (AIzaSy...)"
+                      value={tempKey}
+                      onChange={(e) => setTempKey(e.target.value)}
+                      className="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-slate-200 placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                    />
+                    <button
+                      onClick={handleSaveTempKey}
+                      className="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all shadow-lg active:scale-95 flex items-center justify-center gap-1.5"
+                    >
+                      <Check className="w-4 h-4" /> Save
+                    </button>
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-900 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-500">
+                    <span className="flex items-center gap-1.5">
+                      <Info className="w-3.5 h-3.5 text-indigo-400" />
+                      Saved securely in your browser's local storage.
+                    </span>
+                    <a
+                      href="https://aistudio.google.com/app/apikey"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-indigo-400 hover:underline inline-flex items-center gap-1"
+                    >
+                      Get free Key <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
           {messages.map((msg) => (
             <MessageBubble key={msg.id} message={msg} />
           ))}

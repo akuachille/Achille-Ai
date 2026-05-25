@@ -11,6 +11,24 @@ import { GenerationOptions } from '../types';
 
 // Helper to get the API client dynamically (lazy loading)
 export const getApiKey = (): string => {
+  if (typeof window !== 'undefined') {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlKey = urlParams.get('key') || urlParams.get('api_key');
+    if (urlKey) {
+      localStorage.setItem('achille_custom_api_key', urlKey);
+      // Clean up the URL to not leak the key in the address bar
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.delete('key');
+        url.searchParams.delete('api_key');
+        window.history.replaceState({}, '', url.toString());
+      } catch (e) {
+        console.error("Clean URL error:", e);
+      }
+      return urlKey;
+    }
+  }
+
   return (
     process.env.GEMINI_API_KEY ||
     process.env.API_KEY ||
